@@ -1,15 +1,16 @@
 invites:
-  - invite_key: "Kevin and Maria Lalor"
+  - invite_key: Kevin and Maria Lalor
+    hash: c283f11e
     emails:
-      - "kevin@example.com"
-      - "maria@example.com"
+      - kevin@example.com
+      - maria@example.com
     guests:
-      - name: "Kevin Lalor"
-      - name: "Maria Lalor"
-
-  - invite_key: "Peter Lalor"
+      - name: Kevin Lalor
+      - name: Maria Lalor
+  - invite_key: Peter Lalor
+    hash: 3a202d7f
     emails:
-      - "peter@example.com"
+      - peter@example.com
     guests:
-      - name: "Peter Lalor"
-      - name: "Plus One"
+      - name: Peter Lalor
+      - name: Plus One
