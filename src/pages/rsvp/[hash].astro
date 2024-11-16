@@ -1,9 +1,6 @@
 ---
-// src/pages/rsvp/[hash].astro
-
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
-import Main from "@layouts/Main.astro";
 import yaml from 'js-yaml';
 import fs from 'node:fs';
 
@@ -30,9 +27,9 @@ const { invite_key, guests } = Astro.props;
 
 <Layout title={`RSVP - ${invite_key}`}>
   <Header />
-  <Main>
-    <section class="prose mb-8">
-      <h1 class="text-2xl font-bold mb-4">RSVP</h1>
+  <main id="main-content">
+    <section id="rsvp">
+      <h1>RSVP</h1>
       <div id="rsvpContainer">
         <p class="mb-4">Please confirm your attendance below:</p>
 
@@ -78,8 +75,20 @@ const { invite_key, guests } = Astro.props;
         </form>
       </div>
     </section>
-  </Main>
+  </main>
 </Layout>
+
+<style>
+    #rsvp {
+        @apply pb-6 pt-8;
+    }
+    #rsvp h1 {
+        @apply my-4 inline-block text-2xl font-bold sm:my-8 sm:text-3xl;
+    }
+    #rsvp p {
+        @apply my-2;
+    }
+</style>
 
 <script define:vars={{ formId: "1FAIpQLSdjXBjDMCrDuUKwp5sA3_w3MeRDC5Z_kQ-2gT3eUcTEs7qzLg" }}>
   const form = document.getElementById('rsvpForm');
