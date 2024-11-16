@@ -7,7 +7,7 @@ import yaml from 'js-yaml';
 import fs from "node:fs";
 
 export const SITE: Site = {
-  website: "https://ainara-and-luke.github.io/", // replace this with your deployed domain
+  website: "https://ainara-luke.github.io/", // replace this with your deployed domain
   author: "Luke & Ainara",
   profile: "https://github.com/LukeLalor",
   desc: "Luke & Ainara's Wedding Website",
