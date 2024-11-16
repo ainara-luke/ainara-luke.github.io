@@ -7,10 +7,10 @@ import yaml from 'js-yaml';
 import fs from "node:fs";
 
 export const SITE: Site = {
-  website: "https://astro-paper.pages.dev/", // replace this with your deployed domain
-  author: "Sat Naing",
-  profile: "https://satnaing.dev/",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
+  website: "https://lukelalor.github.io/", // replace this with your deployed domain
+  author: "Luke & Ainara",
+  profile: "https://github.com/LukeLalor",
+  desc: "Luke & Ainara's Wedding Website",
   title: "Ainara & Luke",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
@@ -18,11 +18,7 @@ export const SITE: Site = {
   postPerPage: 3,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
   showArchives: false,
-  editPost: {
-    url: "https://github.com/satnaing/astro-paper/edit/main/src/content/blog",
-    text: "Suggest Changes",
-    appendFilePath: true,
-  },
+  editPost: {},
 };
 
 export const LOCALE = {
