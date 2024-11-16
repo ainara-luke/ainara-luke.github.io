@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import yaml from 'js-yaml';
 import crypto from 'node:crypto';
 
-const fileContents = fs.readFileSync('invites.yaml', 'utf8');
+const fileContents = fs.readFileSync('wedding-config.yaml', 'utf8');
 const data = yaml.load(fileContents);
 const usedHashes = new Set();
 
@@ -30,8 +30,8 @@ data.invites = data.invites.map(invite => {
 });
 
 fs.writeFileSync(
-  'invites.yaml',
+  'wedding-config.yaml',
   yaml.dump(data, { quotingType: '"', lineWidth: -1 })
 );
 
-console.log('Updated hashes in invites.yaml');
+console.log('Updated hashes in wedding-config.yaml');

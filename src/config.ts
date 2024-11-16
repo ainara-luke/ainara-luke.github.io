@@ -1,4 +1,10 @@
-import type { Site, SocialObjects } from "./types";
+import type {
+  Site,
+  SocialObjects,
+  WeddingConfig,
+} from "./types";
+import yaml from 'js-yaml';
+import fs from "node:fs";
 
 export const SITE: Site = {
   website: "https://astro-paper.pages.dev/", // replace this with your deployed domain
@@ -153,3 +159,7 @@ export const SOCIALS: SocialObjects = [
     active: false,
   },
 ];
+
+
+const fileContents = fs.readFileSync('wedding-config.yaml', 'utf8');
+export const WEDDINGCONFIG: WeddingConfig = yaml.load(fileContents) as WeddingConfig;

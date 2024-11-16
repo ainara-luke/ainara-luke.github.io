@@ -19,6 +19,22 @@ export type Site = {
   };
 };
 
+export interface WeddingConfig {
+  password: string;
+  invites: Invite[];
+}
+
+export interface Invite {
+  invite_key: string;
+  hash: string;
+  emails: string[];
+  guests: Guest[];
+}
+
+export interface Guest {
+  name: string;
+}
+
 export type SocialObjects = {
   name: keyof typeof socialIcons;
   href: string;

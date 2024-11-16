@@ -1,19 +1,10 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
-import yaml from 'js-yaml';
-import fs from 'node:fs';
+import { WEDDINGCONFIG } from "../../config";
 
 export async function getStaticPaths() {
-  const fileContents = fs.readFileSync('invites.yaml', 'utf8');
-  const data = yaml.load(fileContents) as { invites: Array<{
-      invite_key: string;
-      hash: string;
-      emails: string[];
-      guests: Array<{ name: string; }>;
-    }>};
-
-  return data.invites.map(invite => ({
+  return WEDDINGCONFIG.invites.map(invite => ({
     params: { hash: invite.hash },
     props: {
       invite_key: invite.invite_key,
