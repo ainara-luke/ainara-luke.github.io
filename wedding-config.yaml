@@ -1,17 +1,10 @@
-password: "CountryMice"
+#password: password
 invites:
-  - invite_key: Kevin and Maria Lalor
+  - invite_key: Test Invite
     hash: c283f11e
     emails:
-      - kevin@example.com
-      - maria@example.com
+      - foo@example.com
+      - bar@example.com
     guests:
-      - name: Kevin Lalor
-      - name: Maria Lalor
-  - invite_key: Peter Lalor
-    hash: 3a202d7f
-    emails:
-      - peter@example.com
-    guests:
-      - name: Peter Lalor
-      - name: Plus One
+      - name: Foo Baz
+      - name: Bar Baz
