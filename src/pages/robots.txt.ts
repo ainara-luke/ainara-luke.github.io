@@ -2,13 +2,19 @@ import type { APIRoute } from "astro";
 import { SITE } from "@config";
 
 const robots = `
-User-agent: Googlebot
-Disallow: /nogooglebot/
-
 User-agent: *
-Allow: /
+Disallow: /
 
-Sitemap: ${new URL("sitemap-index.xml", SITE.website).href}
+User-agent: Googlebot
+Disallow: /
+
+User-agent: Bingbot
+Disallow: /
+
+User-agent: DuckDuckBot
+Disallow: /
+
+# No need for sitemap since we're blocking all access
 `.trim();
 
 export const GET: APIRoute = () =>
