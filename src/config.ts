@@ -12,7 +12,7 @@ export const SITE: Site = {
   profile: "https://github.com/LukeLalor",
   desc: "Luke & Ainara's Wedding Website",
   title: "Ainara & Luke",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "luke-and-ainara-skiing.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 3,
