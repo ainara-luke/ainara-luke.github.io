@@ -7,5 +7,5 @@ Placeholder for activities page. All in markdown which is freaking sweet.
 ```python
 from pnw import Seattle
 
-print(Seattle().find_activities())
+Seattle().find_activities()
 ```
