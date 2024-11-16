@@ -20,7 +20,7 @@ export type Site = {
 };
 
 export interface WeddingConfig {
-  password: string;
+  password?: string;
   invites: Invite[];
 }
 
