@@ -2,27 +2,29 @@
 // src/pages/rsvp/[hash].astro
 
 import Layout from "@layouts/Layout.astro";
-// We'll need these paths based on AstroPaper template structure
 import Header from "@components/Header.astro";
 import Main from "@layouts/Main.astro";
+import yaml from 'js-yaml';
+import fs from 'node:fs';
 
 export async function getStaticPaths() {
-  // For now, just return our test page
-  return [
-    {
-      params: { hash: "123abc" },
-      props: {
-        invite_key: "Kevin and Maria Lalor",
-        guests: [
-          { name: "Kevin Lalor" },
-          { name: "Maria Lalor" }
-        ]
-      }
+  const fileContents = fs.readFileSync('invites.yaml', 'utf8');
+  const data = yaml.load(fileContents) as { invites: Array<{
+      invite_key: string;
+      hash: string;
+      emails: string[];
+      guests: Array<{ name: string; }>;
+    }>};
+
+  return data.invites.map(invite => ({
+    params: { hash: invite.hash },
+    props: {
+      invite_key: invite.invite_key,
+      guests: invite.guests
     }
-  ];
+  }));
 }
 
-// Get our page data from getStaticPaths
 const { invite_key, guests } = Astro.props;
 ---
 
