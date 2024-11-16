@@ -7,12 +7,12 @@ import yaml from 'js-yaml';
 import fs from "node:fs";
 
 export const SITE: Site = {
-  website: "https://lukelalor.github.io/", // replace this with your deployed domain
+  website: "https://ainara-and-luke.github.io/", // replace this with your deployed domain
   author: "Luke & Ainara",
   profile: "https://github.com/LukeLalor",
   desc: "Luke & Ainara's Wedding Website",
   title: "Ainara & Luke",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "luke-and-ainara-skiing.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 3,

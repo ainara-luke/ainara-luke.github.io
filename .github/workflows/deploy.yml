@@ -20,6 +20,19 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
+
+      - name: Fetch config from wedding-config repository
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/wedding-config
+          path: temp-config
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Copy config file
+        run: |
+          cp temp-config/wedding-config.yaml ./wedding-config.yaml
+          rm -rf temp-config
+
       - name: Install, build, and upload your site
         uses: withastro/action@v3
           # with:

@@ -7,5 +7,5 @@ Placeholder page. All in markdown which is freaking sweet.
 ```python
 from wedding import Wedding
 
-print(Wedding().details)
+Wedding().details
 ```
