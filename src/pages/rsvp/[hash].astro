@@ -31,48 +31,50 @@ const { invite_key, guests } = Astro.props;
   <Main>
     <section class="prose mb-8">
       <h1 class="text-2xl font-bold mb-4">RSVP</h1>
-      <p class="mb-4">Please confirm your attendance below:</p>
+      <div id="rsvpContainer">
+        <p class="mb-4">Please confirm your attendance below:</p>
 
-      <form id="rsvpForm" class="space-y-4">
-        <!-- Hidden field for invite key -->
-        <input type="hidden" name="invite_key" value={invite_key} />
+        <form id="rsvpForm" class="space-y-4">
+          <!-- Hidden field for invite key -->
+          <input type="hidden" name="invite_key" value={invite_key} />
 
-        <!-- Guest checkboxes -->
-        <div class="space-y-2">
-          {guests.map(guest => (
-            <div class="flex items-center">
-              <input
-                type="checkbox"
-                id={guest.name}
-                name="guest_names"
-                value={guest.name}
-                class="mr-2"
-                style="cursor: pointer"
-              />
-              <label for={guest.name} style="cursor: pointer">{guest.name}</label>
-            </div>
-          ))}
-        </div>
+          <!-- Guest checkboxes -->
+          <div class="space-y-2">
+            {guests.map(guest => (
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id={guest.name}
+                  name="guest_names"
+                  value={guest.name}
+                  class="mr-2"
+                  style="cursor: pointer"
+                />
+                <label for={guest.name} style="cursor: pointer">{guest.name}</label>
+              </div>
+            ))}
+          </div>
 
-        <!-- Notes field -->
-        <div>
-          <label for="notes" class="block mb-2">Additional Notes:</label>
-          <textarea
-            id="notes"
-            name="notes"
-            rows="3"
-            class="w-full p-2 border rounded"
-          ></textarea>
-        </div>
+          <!-- Notes field -->
+          <div>
+            <label for="notes" class="block mb-2">Additional Notes:</label>
+            <textarea
+              id="notes"
+              name="notes"
+              rows="3"
+              class="w-full p-2 border rounded"
+            ></textarea>
+          </div>
 
-        <!-- Submit button -->
-        <button
-          type="submit"
-          class="bg-skin-accent text-skin-inverted px-4 py-2 rounded"
-        >
-          Submit RSVP
-        </button>
-      </form>
+          <!-- Submit button -->
+          <button
+            type="submit"
+            class="bg-skin-accent text-skin-inverted px-4 py-2 rounded"
+          >
+            Submit RSVP
+          </button>
+        </form>
+      </div>
     </section>
   </Main>
 </Layout>
@@ -99,17 +101,18 @@ const { invite_key, guests } = Astro.props;
         `https://docs.google.com/forms/d/e/${formId}/formResponse`,
         {
           method: 'POST',
-          mode: 'no-cors', // This is needed for Google Forms
+          mode: 'no-cors',
           body: formData
         }
       );
 
-      // Since we're using no-cors, we can't actually check the response
-      // So we'll assume success if we get here
-      form.innerHTML = '<div class="text-green-600">Thank you for your RSVP!</div>';
+      // Replace the entire container instead of just the form
+      document.getElementById('rsvpContainer').innerHTML =
+        '<div class="text-green-600">Thank you for your RSVP!</div>';
     } catch (error) {
       console.error('Error:', error);
-      form.innerHTML += '<div class="text-red-600">There was an error submitting your RSVP. Please try again later.</div>';
+      document.getElementById('rsvpContainer').innerHTML +=
+        '<div class="text-red-600">There was an error submitting your RSVP. Please try again later.</div>';
     }
   });
 </script>
