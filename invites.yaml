@@ -1,0 +1,15 @@
+invites:
+  - invite_key: "Kevin and Maria Lalor"
+    emails:
+      - "kevin@example.com"
+      - "maria@example.com"
+    guests:
+      - name: "Kevin Lalor"
+      - name: "Maria Lalor"
+
+  - invite_key: "Peter Lalor"
+    emails:
+      - "peter@example.com"
+    guests:
+      - name: "Peter Lalor"
+      - name: "Plus One"
