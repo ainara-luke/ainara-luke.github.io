@@ -3,11 +3,7 @@ import { LOGO_IMAGE, SITE } from "@config";
 import Hr from "./Hr.astro";
 import LinkButton from "./LinkButton.astro";
 
-export interface Props {
-  activeNav?: "activities" | "about";
-}
-
-const { activeNav } = Astro.props;
+const pathname = Astro.url.pathname;
 ---
 
 <header>
@@ -56,12 +52,12 @@ const { activeNav } = Astro.props;
         </button>
         <ul id="menu-items" class="display-none sm:flex">
           <li>
-            <a href="/activities/" class={activeNav === "activities" ? "active" : ""}>
+            <a href="/activities/" class={pathname === "/activities/" ? "active" : ""}>
               Activities
             </a>
           </li>
           <li>
-            <a href="/about/" class={activeNav === "about" ? "active" : ""}>
+            <a href="/about/" class={pathname === "/about/" ? "active" : ""}>
               About
             </a>
           </li>
@@ -78,7 +74,7 @@ const { activeNav } = Astro.props;
                     xmlns="http://www.w3.org/2000/svg"
                     class:list={[
                       "icon icon-tabler icons-tabler-outline !hidden sm:!inline-block",
-                      activeNav === "archives" && "!stroke-skin-accent",
+                      pathname === "/archives/" && "!stroke-skin-accent",
                     ]}
                   >
                     <>
@@ -91,7 +87,7 @@ const { activeNav } = Astro.props;
                   <span
                     class:list={[
                       "sm:sr-only",
-                      activeNav === "archives" && "active",
+                      pathname === "/archives/" && "active",
                     ]}
                   >
                     Archives
@@ -186,18 +182,18 @@ const { activeNav } = Astro.props;
     @apply scale-125 hover:rotate-12 sm:scale-100;
   }
 
-  .menu-icon line {
-    @apply transition-opacity duration-75 ease-in-out;
-  }
-  .menu-icon .close {
-    opacity: 0;
-  }
-  .menu-icon.is-active .line {
-    @apply opacity-0;
-  }
-  .menu-icon.is-active .close {
-    @apply opacity-100;
-  }
+    .menu-icon line {
+        @apply transition-opacity duration-75 ease-in-out;
+    }
+    .menu-icon .close {
+        opacity: 0;
+    }
+    .menu-icon.is-active .line {
+        @apply opacity-0;
+    }
+    .menu-icon.is-active .close {
+        @apply opacity-100;
+    }
 </style>
 
 <script>
