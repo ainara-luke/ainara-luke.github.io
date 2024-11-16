@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
+import CountdownTimer from "@components/CountdownTimer.astro";
 ---
 
 <Layout>
@@ -23,16 +24,9 @@ import Footer from "@components/Footer.astro";
         about our special day.
       </p>
 
-      <div class="countdown-wrapper">
-        <p class="countdown-text">Counting down the days...</p>
-        <div class="countdown" id="countdown">
-          <!-- Countdown will be populated by JavaScript -->
-        </div>
-      </div>
-
+      <CountdownTimer />
     </section>
   </main>
-
   <Footer />
 </Layout>
 
@@ -53,15 +47,6 @@ import Footer from "@components/Footer.astro";
     .welcome-text {
         @apply my-6 max-w-2xl mx-auto text-lg;
     }
-    .countdown-wrapper {
-        @apply mt-8 mb-6;
-    }
-    .countdown-text {
-        @apply text-lg font-medium mb-4;
-    }
-    .countdown {
-        @apply flex justify-center gap-6 text-center;
-    }
     .social-wrapper {
         @apply mt-8 flex flex-col sm:flex-row sm:items-center justify-center;
     }
@@ -77,38 +62,3 @@ import Footer from "@components/Footer.astro";
         @apply text-2xl font-semibold tracking-wide text-center mb-8;
     }
 </style>
-
-<script>
-  function updateCountdown() {
-    const weddingDate = new Date('2025-06-27T00:00:00');
-    const now = new Date();
-    const diff = weddingDate - now;
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-
-    const countdown = document.getElementById('countdown');
-    countdown.innerHTML = `
-      <div>
-        <span class="text-3xl font-bold">${days}</span>
-        <br/>
-        <span class="text-sm">days</span>
-      </div>
-      <div>
-        <span class="text-3xl font-bold">${hours}</span>
-        <br/>
-        <span class="text-sm">hours</span>
-      </div>
-      <div>
-        <span class="text-3xl font-bold">${minutes}</span>
-        <br/>
-        <span class="text-sm">minutes</span>
-      </div>
-    `;
-  }
-
-  // Update countdown immediately and then every minute
-  updateCountdown();
-  setInterval(updateCountdown, 60000);
-</script>

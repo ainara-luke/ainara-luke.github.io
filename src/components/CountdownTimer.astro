@@ -1,0 +1,82 @@
+---
+// CountdownTimer.astro
+---
+
+<div class="countdown-wrapper">
+  <p class="countdown-text">Counting down the days...</p>
+  <div class="countdown" id="countdown">
+    <!-- Countdown will be populated by JavaScript -->
+  </div>
+</div>
+
+<script>
+  // Create a function to handle the countdown initialization and updates
+  function initCountdown() {
+    function updateCountdown() {
+      const weddingDate = new Date('2025-06-27T00:00:00');
+      const now = new Date();
+      const diff = weddingDate - now;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+      const countdown = document.getElementById('countdown');
+      if (countdown) {
+        countdown.innerHTML = `
+          <div>
+            <span class="text-3xl font-bold">${days}</span>
+            <br/>
+            <span class="text-sm">days</span>
+          </div>
+          <div>
+            <span class="text-3xl font-bold">${hours}</span>
+            <br/>
+            <span class="text-sm">hours</span>
+          </div>
+          <div>
+            <span class="text-3xl font-bold">${minutes}</span>
+            <br/>
+            <span class="text-sm">minutes</span>
+          </div>
+        `;
+      }
+    }
+
+    // Update immediately
+    updateCountdown();
+
+    // Clear any existing intervals
+    if (window.countdownInterval) {
+      clearInterval(window.countdownInterval);
+    }
+
+    // Set new interval
+    window.countdownInterval = setInterval(updateCountdown, 60000);
+  }
+
+  // Initialize countdown when the script loads
+  initCountdown();
+
+  // Re-initialize on view transitions
+  document.addEventListener('astro:page-load', initCountdown);
+
+  // Cleanup on page unload
+  document.addEventListener('astro:before-swap', () => {
+    if (window.countdownInterval) {
+      clearInterval(window.countdownInterval);
+    }
+  });
+</script>
+
+<style>
+    .countdown-wrapper {
+        @apply mt-8 mb-6;
+    }
+    .countdown-text {
+        @apply text-lg font-medium mb-4;
+    }
+    .countdown {
+        @apply flex justify-center gap-6 text-center;
+    }
+</style>
