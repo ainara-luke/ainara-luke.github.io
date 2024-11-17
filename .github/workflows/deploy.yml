@@ -24,6 +24,8 @@ jobs:
       - name: Copy config file
         run: echo "${{ secrets.WEDDING_CONFIG }}" > wedding-config.yaml
 
+      - run: cat wedding-config.yaml
+
       - name: Install, build, and upload your site
         uses: withastro/action@v3
           # with:
