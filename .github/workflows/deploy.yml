@@ -23,9 +23,7 @@ jobs:
 
       - name: Copy config file
         run: |
-          cat << 'EOF' > wedding-config.yaml >/dev/null 2>&1
-          ${{ vars.WEDDING_CONFIG }}
-          EOF      
+          echo "${{ vars.WEDDING_CONFIG }}" > wedding-config.yaml 2>/dev/null >/dev/null
 
       - name: Install, build, and upload your site
         uses: withastro/action@v3
