@@ -25,6 +25,10 @@ jobs:
         env:
           local_secret: ${{ secrets.WEDDING_CONFIG }}
         run: echo $local_secret | sed 's/^ */::add-mask::/'
+          while read -r line;
+          do
+            echo "::add-mask::${line}"
+          done <<< $local_secret
 
       - name: Copy config file
         run: echo "${{ vars.WEDDING_CONFIG }}" > wedding-config.yaml
