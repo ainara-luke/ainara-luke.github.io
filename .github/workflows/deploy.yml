@@ -22,9 +22,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Copy config file
+        env:
+          CONFIG_CONTENT: ${{ vars.WEDDING_CONFIG }}
         run: |
-          echo "::add-mask::${{ vars.WEDDING_CONFIG }}" > wedding-config.yaml
-          cat wedding-config.yaml
+          echo "::add-mask::$CONFIG_CONTENT"
+          echo "$CONFIG_CONTENT" > wedding-config.yaml
+      
       
 
       - name: Install, build, and upload your site
