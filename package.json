@@ -12,7 +12,8 @@
     "format:check": "prettier --check . --plugin=prettier-plugin-astro",
     "format": "prettier --write . --plugin=prettier-plugin-astro",
     "lint": "eslint .",
-    "update-hashes": "node scripts/update-hashes.js"
+    "update-hashes": "node scripts/update-hashes.js",
+    "update-config": "npm run update-hashes && node scripts/update-github-variable.js"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
