@@ -10,8 +10,8 @@ export const SITE: Site = {
   website: "https://ainara-luke.github.io/", // replace this with your deployed domain
   author: "Luke & Ainara",
   profile: "https://github.com/LukeLalor",
-  desc: "Luke & Ainara's Wedding Website",
-  title: "Ainara & Luke",
+  title: "Ainara & Luke are getting married!",
+  desc: "Friday, June 27th, 2025 | Seattle, WA | Bring a raincoat",
   ogImage: "luke-ainara-skiing.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
