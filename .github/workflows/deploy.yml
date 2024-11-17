@@ -21,9 +21,11 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
 
+      - name: Add mask
+        run: echo "::add-mask::${{ vars.WEDDING_CONFIG }}"
+
       - name: Copy config file
-        shell: bash
-        run: set +x; echo "${{ vars.WEDDING_CONFIG }}" > wedding-config.yaml >/dev/null 2>&1
+        run: echo "${{ vars.WEDDING_CONFIG }}" > wedding-config.yaml
 
       - name: Install, build, and upload your site
         uses: withastro/action@v3
