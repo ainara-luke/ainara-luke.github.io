@@ -7,7 +7,7 @@ const REPO = 'ainara-luke/ainara-luke.github.io';
 try {
   // Read and update the config
   const configContent = readFileSync(CONFIG_PATH, 'utf8');
-  execSync(`gh variable set WEBSITE_CONFIG -b"${configContent}" -R ${REPO}`, {
+  execSync(`gh variable set WEDDING_CONFIG -b"${configContent}" -R ${REPO}`, {
     stdio: 'inherit'
   });
 
