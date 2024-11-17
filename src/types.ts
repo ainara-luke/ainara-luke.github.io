@@ -27,7 +27,7 @@ export interface WeddingConfig {
 export interface Invite {
   invite_key: string;
   hash: string;
-  emails: string[];
+  emails?: string[];
   guests: Guest[];
 }
 
