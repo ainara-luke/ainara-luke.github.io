@@ -21,16 +21,8 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
 
-      - name: Mask config content
-        env:
-          CONFIG_CONTENT: ${{ vars.WEDDING_CONFIG }}
-        run: |
-          while IFS= read -r line; do
-            echo "::add-mask::$line"
-          done <<< "$CONFIG_CONTENT"
-
       - name: Copy config file
-        run: echo "${{ vars.WEDDING_CONFIG }}" > wedding-config.yaml
+        run: echo "${{ secrets.WEDDING_CONFIG }}" > wedding-config.yaml
 
       - name: Install, build, and upload your site
         uses: withastro/action@v3
