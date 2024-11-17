@@ -21,14 +21,13 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
 
-      - name: Mask multiline env
+      - name: Mask config content
         env:
-          local_secret: ${{ secrets.WEDDING_CONFIG }}
-        run: echo $local_secret | sed 's/^ */::add-mask::/'
-          while read -r line;
-          do
-            echo "::add-mask::${line}"
-          done <<< $local_secret
+          CONFIG_CONTENT: ${{ vars.WEDDING_CONFIG }}
+        run: |
+          while IFS= read -r line; do
+            echo "::add-mask::$line"
+          done <<< "$CONFIG_CONTENT"
 
       - name: Copy config file
         run: echo "${{ vars.WEDDING_CONFIG }}" > wedding-config.yaml
