@@ -23,8 +23,8 @@ jobs:
 
       - name: Copy config file
         run: |
-          echo "::add-mask::${{ vars.WEDDING_CONFIG }}"
-          echo "${{ vars.WEDDING_CONFIG }}" > wedding-config.yaml
+          echo "::add-mask::${{ vars.WEDDING_CONFIG }}" > wedding-config.yaml
+          cat wedding-config.yaml
       
 
       - name: Install, build, and upload your site
