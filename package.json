@@ -4,7 +4,7 @@
   "private": false,
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "npm run update-hashes && astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "sync": "astro sync",
@@ -13,7 +13,8 @@
     "format": "prettier --write . --plugin=prettier-plugin-astro",
     "lint": "eslint .",
     "update-hashes": "node scripts/update-hashes.js",
-    "update-config": "npm run update-hashes && node scripts/update-github-variable.js"
+    "update-config": "npm run update-hashes && node scripts/update-github-variable.js",
+    "deploy": "npm run update-hashes && node scripts/trigger-deployment.js"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
