@@ -22,9 +22,16 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Copy config file
-        run: echo "${{ secrets.WEDDING_CONFIG }}" > wedding-config.yaml
-
-      - run: cat wedding-config.yaml
+        run: |
+          echo "=== Secret content ===" 
+          echo "${{ secrets.WEDDING_CONFIG }}"
+          echo "=== Writing to file ==="
+          echo "${{ secrets.WEDDING_CONFIG }}" > wedding-config.yaml
+          echo "=== File contents ==="
+          cat wedding-config.yaml
+          echo "=== File stats ==="
+          ls -la wedding-config.yaml
+      
 
       - name: Install, build, and upload your site
         uses: withastro/action@v3
