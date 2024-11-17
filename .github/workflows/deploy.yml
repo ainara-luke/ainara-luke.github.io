@@ -21,8 +21,11 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
 
-      - name: Add mask
-        run: echo "::add-mask::${{ vars.WEDDING_CONFIG }}"
+      - name: Add masks
+        run: |
+          while IFS= read -r line; do
+            echo "::add-mask::$line"
+          done <<< "${{ vars.WEDDING_CONFIG }}"
 
       - name: Copy config file
         run: echo "${{ vars.WEDDING_CONFIG }}" > wedding-config.yaml
