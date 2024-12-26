@@ -3,11 +3,8 @@ layout: ../layouts/MDLayout.astro
 title: "About"
 ---
 
-# We loves each other <- Ainara
+#La Boda
+27 de junio, 2025
+2PM
+Center for Urban Horticulture, Seattle, WA
 
-Placeholder page. All in markdown which is freaking sweet.
-```python
-from wedding import Wedding
-
-Wedding().details
-```
