@@ -61,6 +61,11 @@ const pathname = Astro.url.pathname;
               About
             </a>
           </li>
+          <li>
+            <a href="/rsvp" class={pathname === "/rsvp" ? "active" : ""}>
+              RSVP
+            </a>
+          </li>
           {
             SITE.showArchives && (
               <li>
