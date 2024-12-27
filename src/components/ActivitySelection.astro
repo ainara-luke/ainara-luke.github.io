@@ -17,13 +17,16 @@ const { name, activities, categoryInfo } = Astro.props;
 const uniqueCategories = Object.keys(categoryInfo);
 ---
 
-<section class="prose mb-28 max-w-3xl prose-img:border-0">
+<section class="prose mb-28 max-w-3xl prose-img:border-0 dark:prose-invert">
   <h1 class="text-2xl tracking-wider sm:text-3xl">{name}</h1>
 
-  <div class="mb-8 flex flex-wrap gap-2">
+  <div class="mb-8 flex flex-wrap gap-4">
     {uniqueCategories.map(category => (
       <button
-        class="category-btn px-3 py-1 border rounded-full hover:bg-gray-100 transition-colors"
+        class="category-btn relative
+             text-gray-700 dark:text-gray-300
+             hover:text-[rgb(var(--color-accent))]
+             font-medium"
         data-category={category}
       >
         {category} {categoryInfo[category]}
@@ -43,22 +46,27 @@ const uniqueCategories = Object.keys(categoryInfo);
   </div>
 </section>
 
+<style>
+    .category-btn.selected {
+        text-decoration-line: underline;
+        text-decoration-style: wavy;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
+    }
+</style>
+
 <script>
   function setupFilters() {
-    // Keep track of selected categories
     const selected = new Set();
 
-    // Clean up any existing handlers by cloning and replacing buttons
     const buttonContainer = document.querySelector('.mb-8');
     if (buttonContainer) {
       const newContainer = buttonContainer.cloneNode(true);
       buttonContainer.parentNode.replaceChild(newContainer, buttonContainer);
     }
 
-    // Add click handlers to category buttons
     document.querySelectorAll('.category-btn').forEach(btn => {
-      // Restore any previously selected state
-      if (btn.classList.contains('bg-gray-200')) {
+      if (btn.classList.contains('selected')) {
         const category = btn.getAttribute('data-category');
         selected.add(category);
       }
@@ -66,17 +74,15 @@ const uniqueCategories = Object.keys(categoryInfo);
       btn.addEventListener('click', () => {
         const category = btn.getAttribute('data-category');
 
-        // Toggle button state
-        btn.classList.toggle('bg-gray-200');
+        // Toggle selection state
+        btn.classList.toggle('selected');
 
-        // Update selected categories
         if (selected.has(category)) {
           selected.delete(category);
         } else {
           selected.add(category);
         }
 
-        // Filter activities
         document.querySelectorAll('article').forEach(article => {
           const show = selected.size === 0 ||
             Array.from(selected).every(cat => article.classList.contains(cat));
@@ -86,9 +92,6 @@ const uniqueCategories = Object.keys(categoryInfo);
     });
   }
 
-  // Run on first load (using DOMContentLoaded for initial page load)
   document.addEventListener('DOMContentLoaded', setupFilters);
-
-  // Re-run when navigating back to the page
   document.addEventListener('astro:page-load', setupFilters);
 </script>
