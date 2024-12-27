@@ -1,0 +1,16 @@
+---
+interface Props {
+  title: string;
+  categories: string[];
+}
+
+const { title, categories } = Astro.props;
+const categoryClasses = categories.join(' ');
+---
+
+<article class={`${categoryClasses}`}>
+  <h3 class="text-xl font-bold">
+    {title} <span class="ml-2">{categories.join(' ')}</span>
+  </h3>
+  <slot />
+</article>

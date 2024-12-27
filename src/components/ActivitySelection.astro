@@ -1,0 +1,75 @@
+---
+import ActivityCard from './ActivityCard.astro';
+
+interface Activity {
+  title: string;
+  categories: string[];
+  description: string;
+}
+
+interface Props {
+  name: string;
+  activities: Activity[];
+  categoryInfo: Record<string, string>;
+}
+
+const { name, activities, categoryInfo } = Astro.props;
+const uniqueCategories = Object.keys(categoryInfo);
+---
+
+<section class="prose mb-28 max-w-3xl prose-img:border-0">
+  <h1 class="text-2xl tracking-wider sm:text-3xl">{name}</h1>
+
+  <div class="mb-8 flex flex-wrap gap-2">
+    {uniqueCategories.map(category => (
+      <button
+        class="px-3 py-1 border rounded-full hover:bg-gray-100 transition-colors"
+        data-category={category}
+        data-selected="false"
+        title={categoryInfo[category]}
+      >
+        {category} {categoryInfo[category]}
+      </button>
+    ))}
+  </div>
+
+  {activities.map(activity => (
+    <ActivityCard
+      title={activity.title}
+      categories={activity.categories}
+    >
+      {activity.description}
+    </ActivityCard>
+  ))}
+</section>
+
+<script>
+  let selectedCategories = new Set();
+
+  document.querySelectorAll('[data-category]').forEach(button => {
+    button.addEventListener('click', () => {
+      const category = button.getAttribute('data-category');
+      const isSelected = button.getAttribute('data-selected') === 'true';
+
+      button.setAttribute('data-selected', (!isSelected).toString());
+      button.classList.toggle('bg-gray-200');
+      button.classList.toggle('border-gray-400');
+
+      if (isSelected) {
+        selectedCategories.delete(category);
+      } else {
+        selectedCategories.add(category);
+      }
+
+      document.querySelectorAll('article').forEach(article => {
+        if (selectedCategories.size === 0) {
+          article.classList.remove('hidden');
+        } else {
+          const hasAllSelectedCategories = Array.from(selectedCategories)
+            .every(cat => article.classList.contains(cat));
+          article.classList.toggle('hidden', !hasAllSelectedCategories);
+        }
+      });
+    });
+  });
+</script>
