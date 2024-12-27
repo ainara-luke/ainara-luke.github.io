@@ -23,53 +23,72 @@ const uniqueCategories = Object.keys(categoryInfo);
   <div class="mb-8 flex flex-wrap gap-2">
     {uniqueCategories.map(category => (
       <button
-        class="px-3 py-1 border rounded-full hover:bg-gray-100 transition-colors"
+        class="category-btn px-3 py-1 border rounded-full hover:bg-gray-100 transition-colors"
         data-category={category}
-        data-selected="false"
-        title={categoryInfo[category]}
       >
         {category} {categoryInfo[category]}
       </button>
     ))}
   </div>
 
-  {activities.map(activity => (
-    <ActivityCard
-      title={activity.title}
-      categories={activity.categories}
-    >
-      {activity.description}
-    </ActivityCard>
-  ))}
+  <div id="activities-container">
+    {activities.map(activity => (
+      <ActivityCard
+        title={activity.title}
+        categories={activity.categories}
+      >
+        {activity.description}
+      </ActivityCard>
+    ))}
+  </div>
 </section>
 
 <script>
-  let selectedCategories = new Set();
+  function setupFilters() {
+    // Keep track of selected categories
+    const selected = new Set();
 
-  document.querySelectorAll('[data-category]').forEach(button => {
-    button.addEventListener('click', () => {
-      const category = button.getAttribute('data-category');
-      const isSelected = button.getAttribute('data-selected') === 'true';
+    // Clean up any existing handlers by cloning and replacing buttons
+    const buttonContainer = document.querySelector('.mb-8');
+    if (buttonContainer) {
+      const newContainer = buttonContainer.cloneNode(true);
+      buttonContainer.parentNode.replaceChild(newContainer, buttonContainer);
+    }
 
-      button.setAttribute('data-selected', (!isSelected).toString());
-      button.classList.toggle('bg-gray-200');
-      button.classList.toggle('border-gray-400');
-
-      if (isSelected) {
-        selectedCategories.delete(category);
-      } else {
-        selectedCategories.add(category);
+    // Add click handlers to category buttons
+    document.querySelectorAll('.category-btn').forEach(btn => {
+      // Restore any previously selected state
+      if (btn.classList.contains('bg-gray-200')) {
+        const category = btn.getAttribute('data-category');
+        selected.add(category);
       }
 
-      document.querySelectorAll('article').forEach(article => {
-        if (selectedCategories.size === 0) {
-          article.classList.remove('hidden');
+      btn.addEventListener('click', () => {
+        const category = btn.getAttribute('data-category');
+
+        // Toggle button state
+        btn.classList.toggle('bg-gray-200');
+
+        // Update selected categories
+        if (selected.has(category)) {
+          selected.delete(category);
         } else {
-          const hasAllSelectedCategories = Array.from(selectedCategories)
-            .every(cat => article.classList.contains(cat));
-          article.classList.toggle('hidden', !hasAllSelectedCategories);
+          selected.add(category);
         }
+
+        // Filter activities
+        document.querySelectorAll('article').forEach(article => {
+          const show = selected.size === 0 ||
+            Array.from(selected).every(cat => article.classList.contains(cat));
+          article.classList.toggle('hidden', !show);
+        });
       });
     });
-  });
+  }
+
+  // Run on first load (using DOMContentLoaded for initial page load)
+  document.addEventListener('DOMContentLoaded', setupFilters);
+
+  // Re-run when navigating back to the page
+  document.addEventListener('astro:page-load', setupFilters);
 </script>
