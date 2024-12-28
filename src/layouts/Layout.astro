@@ -1,5 +1,5 @@
 ---
-import { LOCALE, SITE } from "@config";
+import { SITE } from "@config";
 import "@styles/base.css";
 import { ViewTransitions } from "astro:transitions";
 import Footer from "@components/Footer.astro";
@@ -54,7 +54,7 @@ const structuredData = {
 
 <!doctype html>
 <html
-  lang=`${LOCALE.lang ?? "en"}`
+  lang={Astro.currentLocale || "en"}
   class={`${scrollSmooth && "scroll-smooth"}`}
 >
   <head>
