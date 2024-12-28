@@ -1,10 +1,19 @@
 ---
-// Remove current url path and remove trailing slash if exists
-const currentUrlPath = Astro.url.pathname.replace(/\/+$/, "");
+import { getRelativeLocaleUrl } from "astro:i18n";
 
-// Get url array from path
+// Get current locale and path segments, filtering out empty strings
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const currentLocale = Astro.currentLocale || 'en';
+
+// Remove current url path, remove trailing slash if exists
+// For other locales, remove the locale segment
+const currentUrlPath = Astro.url.pathname
+  .replace(/\/+$/, "")
+  .replace(new RegExp(`^/${currentLocale}`), "");
+
+// Get url array from path, filtering out empty strings
 // eg: /tags/tailwindcss => ['tags', 'tailwindcss']
-const breadcrumbList = currentUrlPath.split("/").slice(1);
+const breadcrumbList = currentUrlPath.split("/").filter(Boolean);
 
 // if breadcrumb is Home > Posts > 1 <etc>
 // replace Posts with Posts (page number)
@@ -22,12 +31,17 @@ breadcrumbList[0] === "tags" &&
       Number(breadcrumbList[2]) === 1 ? "" : "(page " + breadcrumbList[2] + ")"
     }`
   );
+
+// Helper function to generate localized URLs using Astro's utility
+const getLocalizedUrl = (path: string) => {
+  return getRelativeLocaleUrl(currentLocale, path);
+};
 ---
 
 <nav class="breadcrumb" aria-label="breadcrumb">
   <ul>
     <li>
-      <a href="/">Home</a>
+      <a href={getLocalizedUrl("/")}>Home</a>
       <span aria-hidden="true">&raquo;</span>
     </li>
     {
@@ -44,7 +58,7 @@ breadcrumbList[0] === "tags" &&
           </li>
         ) : (
           <li>
-            <a href={`/${breadcrumb}/`}>{breadcrumb}</a>
+            <a href={getLocalizedUrl(`/${breadcrumb}/`)}>{breadcrumb}</a>
             <span aria-hidden="true">&raquo;</span>
           </li>
         )

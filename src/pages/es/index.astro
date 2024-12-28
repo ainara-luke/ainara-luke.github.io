@@ -1,0 +1,62 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import CountdownTimer from "@components/CountdownTimer.astro";
+---
+
+<Layout>
+  <Header />
+  <main id="main-content">
+    <section id="hero">
+      <h1>After 9 Years...</h1>
+      <div class="wedding-date">
+        <p class="date-text">
+          Friday, June 27th 2025
+          <br />
+          Seattle, Washington
+        </p>
+      </div>
+
+      <p class="welcome-text">
+        Join us as we celebrate our love and thank those who have helped us along the way. We're creating
+        this space to share our story and keep you updated with all the important details
+        about our special day.
+      </p>
+
+      <CountdownTimer />
+    </section>
+  </main>
+</Layout>
+
+<style>
+    /* ===== Hero Section ===== */
+    #hero {
+        @apply pb-6 pt-8;
+    }
+    #hero h1 {
+        @apply my-4 inline-block text-4xl font-bold sm:my-8 sm:text-6xl;
+    }
+    .wedding-date {
+        @apply flex mb-8;
+    }
+    .date-text {
+        @apply text-xl font-medium;
+    }
+    .welcome-text {
+        @apply my-6 max-w-2xl mx-auto text-lg;
+    }
+    .social-wrapper {
+        @apply mt-8 flex flex-col sm:flex-row sm:items-center justify-center;
+    }
+    .social-links {
+        @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
+    }
+
+    /* ===== Updates Section ===== */
+    #updates {
+        @apply pb-6 pt-12;
+    }
+    #updates h2 {
+        @apply text-2xl font-semibold tracking-wide text-center mb-8;
+    }
+</style>

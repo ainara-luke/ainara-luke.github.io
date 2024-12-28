@@ -14,6 +14,10 @@ export default defineConfig({
     }),
     react(),
   ],
+  i18n: {
+    locales: ["es", "en"],
+    defaultLocale: "en",
+  },
   markdown: {
     remarkPlugins: [
       remarkToc,

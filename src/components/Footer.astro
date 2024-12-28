@@ -1,12 +1,15 @@
 ---
 import Hr from "./Hr.astro";
 import Socials from "./Socials.astro";
+import { footer } from '../i18n/footer';
 
 export interface Props {
   noMarginTop?: boolean;
 }
 
 const { noMarginTop = false } = Astro.props;
+const currentLocale = Astro.currentLocale || 'en';
+const t = footer[currentLocale as keyof typeof footer];
 ---
 
 <footer class={`${noMarginTop ? "" : "mt-auto"}`}>
@@ -14,11 +17,11 @@ const { noMarginTop = false } = Astro.props;
   <div class="footer-wrapper">
     <Socials centered />
     <div class="copyright-wrapper">
-      <span>Friday, June 27th, 2025</span>
+      <span>{t.date}</span>
       <span class="separator">&nbsp;|&nbsp;</span>
-      <span>Seattle, WA</span>
+      <span>{t.location}</span>
       <span class="separator">&nbsp;|&nbsp;</span>
-      <span>Bring a raincoat</span>
+      <span>{t.note}</span>
     </div>
   </div>
 </footer>

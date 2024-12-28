@@ -1,16 +1,26 @@
 ---
 import { LOGO_IMAGE, SITE } from "@config";
+import { getRelativeLocaleUrl } from "astro:i18n";
 import Hr from "./Hr.astro";
 import LinkButton from "./LinkButton.astro";
 
+const currentLocale = Astro.currentLocale || "en";
 const pathname = Astro.url.pathname;
+
+// Remove locale prefix from pathname for active link comparison
+const normalizedPathname = pathname.replace(new RegExp(`^/${currentLocale}`), "");
+
+// Helper function to generate localized URLs
+const getLocalizedUrl = (path: string) => {
+  return getRelativeLocaleUrl(currentLocale, path);
+};
 ---
 
 <header>
   <a id="skip-to-content" href="#main-content">Skip to content</a>
   <div class="nav-container">
     <div class="top-nav-wrap">
-      <a href="/" class="logo whitespace-nowrap">
+      <a href={getLocalizedUrl("/")} class="logo whitespace-nowrap">
         {
           LOGO_IMAGE.enable ? (
             <img
@@ -52,19 +62,28 @@ const pathname = Astro.url.pathname;
         </button>
         <ul id="menu-items" class="display-none sm:flex">
           <li>
-            <a href="/activities/" class={pathname === "/activities/" ? "active" : ""}>
+            <a
+              href={getLocalizedUrl("/activities/")}
+              class={normalizedPathname === "/activities/" ? "active" : ""}
+            >
               Activities
             </a>
           </li>
           <li>
-            <a href="/about/" class={pathname === "/about/" ? "active" : ""}>
+            <a
+              href={getLocalizedUrl("/about/")}
+              class={normalizedPathname === "/about/" ? "active" : ""}
+            >
               About
             </a>
           </li>
           {
             SITE.showRSVP && (
               <li>
-                <a href="/rsvp" class={pathname === "/rsvp" ? "active" : ""}>
+                <a
+                  href={getLocalizedUrl("/rsvp/")}
+                  class={normalizedPathname === "/rsvp/" ? "active" : ""}
+                >
                   RSVP
                 </a>
               </li>

@@ -1,10 +1,14 @@
 ---
 // CountdownTimer.astro
+import { countdown } from '../i18n/countdown';
+
+const currentLocale = Astro.currentLocale || 'en';
+const t = countdown[currentLocale as keyof typeof countdown];
 ---
 
 <div class="countdown-wrapper">
-  <p class="countdown-text">Counting down the days.</p>
-  <div class="countdown" id="countdown">
+  <p class="countdown-text">{t.counting}</p>
+  <div class="countdown" id="countdown" data-days-text={t.days} data-hours-text={t.hours} data-minutes-text={t.minutes}>
     <!-- Countdown will be populated by JavaScript -->
   </div>
 </div>
@@ -23,21 +27,26 @@
 
       const countdown = document.getElementById('countdown');
       if (countdown) {
+        // Get translations from data attributes
+        const daysText = countdown.getAttribute('data-days-text');
+        const hoursText = countdown.getAttribute('data-hours-text');
+        const minutesText = countdown.getAttribute('data-minutes-text');
+
         countdown.innerHTML = `
           <div>
             <span class="text-3xl font-bold">${days}</span>
             <br/>
-            <span class="text-sm">days</span>
+            <span class="text-sm">${daysText}</span>
           </div>
           <div>
             <span class="text-3xl font-bold">${hours}</span>
             <br/>
-            <span class="text-sm">hours</span>
+            <span class="text-sm">${hoursText}</span>
           </div>
           <div>
             <span class="text-3xl font-bold">${minutes}</span>
             <br/>
-            <span class="text-sm">minutes</span>
+            <span class="text-sm">${minutesText}</span>
           </div>
         `;
       }
