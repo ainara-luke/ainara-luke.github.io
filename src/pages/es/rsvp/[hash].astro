@@ -1,7 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
-import { WEDDINGCONFIG } from "../../config";
+import { WEDDINGCONFIG } from "@config";
 
 export async function getStaticPaths() {
   return WEDDINGCONFIG.invites.map(invite => ({
@@ -16,19 +16,19 @@ export async function getStaticPaths() {
 const { invite_key, guests } = Astro.props;
 ---
 
-<Layout title={`RSVP - ${invite_key}`}>
+<Layout title={`Confirmación - ${invite_key}`}>
   <Header />
   <main id="main-content">
     <section id="rsvp">
-      <h1>RSVP</h1>
+      <h1>Confirmación de Asistencia</h1>
       <div id="rsvpContainer">
-        <p class="mb-4">Please confirm your attendance below:</p>
+        <p class="mb-4">Por favor, confirma tu asistencia a continuación:</p>
 
         <form id="rsvpForm" class="space-y-4">
-          <!-- Hidden field for invite key -->
+          <!-- Campo oculto para la clave de invitación -->
           <input type="hidden" name="invite_key" value={invite_key} />
 
-          <!-- Guest checkboxes -->
+          <!-- Casillas de verificación para invitados -->
           <div class="space-y-2">
             {guests.map(guest => (
               <div class="flex items-center">
@@ -45,9 +45,9 @@ const { invite_key, guests } = Astro.props;
             ))}
           </div>
 
-          <!-- Notes field -->
+          <!-- Campo de notas -->
           <div>
-            <label for="notes" class="block mb-2">Additional Notes:</label>
+            <label for="notes" class="block mb-2">Notas Adicionales:</label>
             <textarea
               id="notes"
               name="notes"
@@ -56,12 +56,12 @@ const { invite_key, guests } = Astro.props;
             ></textarea>
           </div>
 
-          <!-- Submit button -->
+          <!-- Botón de enviar -->
           <button
             type="submit"
             class="bg-skin-accent text-skin-inverted px-4 py-2 rounded"
           >
-            Submit RSVP
+            Enviar Confirmación
           </button>
         </form>
       </div>
@@ -88,11 +88,11 @@ const { invite_key, guests } = Astro.props;
     e.preventDefault();
     const formData = new FormData();
 
-    // Get checked guests
+    // Obtener invitados seleccionados
     const checkedBoxes = form.querySelectorAll('input[name="guest_names"]:checked');
     const guestNames = Array.from(checkedBoxes).map(box => box.value);
 
-    // Gather form data
+    // Recopilar datos del formulario
     formData.append('entry.1910503431', form.querySelector('input[name="invite_key"]').value);
     formData.append('entry.1715372634', guestNames.length.toString());
     formData.append('entry.1831974976', JSON.stringify(guestNames));
@@ -108,13 +108,13 @@ const { invite_key, guests } = Astro.props;
         }
       );
 
-      // Replace the entire container instead of just the form
+      // Reemplazar el contenedor completo en lugar de solo el formulario
       document.getElementById('rsvpContainer').innerHTML =
-        '<div class="text-green-600">Thank you for your RSVP!</div>';
+        '<div class="text-green-600">¡Gracias por tu confirmación!</div>';
     } catch (error) {
       console.error('Error:', error);
       document.getElementById('rsvpContainer').innerHTML +=
-        '<div class="text-red-600">There was an error submitting your RSVP. Please try again later.</div>';
+        '<div class="text-red-600">Hubo un error al enviar tu confirmación. Por favor, inténtalo de nuevo más tarde.</div>';
     }
   });
 </script>

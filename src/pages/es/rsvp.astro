@@ -1,16 +1,16 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
-import { WEDDINGCONFIG } from "../config";
+import { WEDDINGCONFIG } from "@config";
 
 const validHashes = WEDDINGCONFIG.invites.map(invite => invite.hash);
 ---
 
-<Layout title="RSVP">
+<Layout title="Confirmación">
   <Header />
   <main class="flex items-start justify-center pt-24">
     <form action="" method="GET" class="w-full max-w-md space-y-4 p-8">
-      <h1 class="text-2xl font-bold text-center">Enter your RSVP code</h1>
+      <h1 class="text-2xl font-bold text-center">Ingresa tu código de confirmación</h1>
       <div class="space-y-2">
         <label>
           <input
@@ -18,16 +18,16 @@ const validHashes = WEDDINGCONFIG.invites.map(invite => invite.hash);
             name="code"
             required
             class="w-full p-2 border rounded"
-            placeholder="Enter your code"
+            placeholder="Ingresa tu código"
           />
         </label>
-        <p id="error-message" class="text-red-500 hidden">Invalid RSVP code. Please check and try again.</p>
+        <p id="error-message" class="text-red-500 hidden">Código de confirmación inválido. Por favor, verifica e intenta de nuevo.</p>
       </div>
       <button
         type="submit"
         class="w-full p-2 bg-skin-accent text-white rounded hover:opacity-90"
       >
-        Submit
+        Enviar
       </button>
     </form>
   </main>
