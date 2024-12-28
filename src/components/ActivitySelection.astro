@@ -4,6 +4,7 @@ import ActivityCard from './ActivityCard.astro';
 interface Activity {
   title: string;
   categories: string[];
+  duration?: string;
   description: string;
 }
 
@@ -35,6 +36,15 @@ const uniqueCategories = Object.keys(categoryInfo);
   </div>
 
   <div id="activities-container">
+    {activities.map(activity => (
+      <ActivityCard
+        title={activity.title}
+        categories={activity.categories}
+        duration={activity.duration}
+      >
+        {activity.description}
+      </ActivityCard>
+    ))}
     {activities.map(activity => (
       <ActivityCard
         title={activity.title}
