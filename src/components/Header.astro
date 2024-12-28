@@ -1,10 +1,12 @@
 ---
 import { LOGO_IMAGE, SITE } from "@config";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import { nav } from '../i18n/nav';
 import Hr from "./Hr.astro";
 import LinkButton from "./LinkButton.astro";
 
 const currentLocale = Astro.currentLocale || "en";
+const t = nav[currentLocale as keyof typeof nav];
 const pathname = Astro.url.pathname;
 
 // Remove locale prefix from pathname for active link comparison
@@ -66,7 +68,7 @@ const getLocalizedUrl = (path: string) => {
               href={getLocalizedUrl("/activities/")}
               class={normalizedPathname === "/activities/" ? "active" : ""}
             >
-              Activities
+              {t.activities}
             </a>
           </li>
           <li>
@@ -74,7 +76,7 @@ const getLocalizedUrl = (path: string) => {
               href={getLocalizedUrl("/about/")}
               class={normalizedPathname === "/about/" ? "active" : ""}
             >
-              About
+              {t.about}
             </a>
           </li>
           {

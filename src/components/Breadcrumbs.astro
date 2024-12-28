@@ -1,9 +1,13 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
+import { nav } from '../i18n/nav';
+
+// Get current locale and translations
+const currentLocale = Astro.currentLocale || 'en';
+const t = nav[currentLocale as keyof typeof nav];
 
 // Get current locale and path segments, filtering out empty strings
 const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
-const currentLocale = Astro.currentLocale || 'en';
 
 // Remove current url path, remove trailing slash if exists
 // For other locales, remove the locale segment
@@ -14,6 +18,15 @@ const currentUrlPath = Astro.url.pathname
 // Get url array from path, filtering out empty strings
 // eg: /tags/tailwindcss => ['tags', 'tailwindcss']
 const breadcrumbList = currentUrlPath.split("/").filter(Boolean);
+
+// Helper function to translate breadcrumb text while keeping URLs unchanged
+const translateBreadcrumb = (breadcrumb: string) => {
+  const translations: Record<string, string> = {
+    "activities": t.activities,
+    "about": t.about
+  };
+  return translations[breadcrumb] || decodeURIComponent(breadcrumb);
+};
 
 // if breadcrumb is Home > Posts > 1 <etc>
 // replace Posts with Posts (page number)
@@ -41,7 +54,7 @@ const getLocalizedUrl = (path: string) => {
 <nav class="breadcrumb" aria-label="breadcrumb">
   <ul>
     <li>
-      <a href={getLocalizedUrl("/")}>Home</a>
+      <a href={getLocalizedUrl("/")}>{t.home}</a>
       <span aria-hidden="true">&raquo;</span>
     </li>
     {
@@ -53,12 +66,14 @@ const getLocalizedUrl = (path: string) => {
               aria-current="page"
             >
               {/* make the last part lowercase in Home > Tags > some-tag */}
-              {decodeURIComponent(breadcrumb)}
+              {translateBreadcrumb(breadcrumb)}
             </span>
           </li>
         ) : (
           <li>
-            <a href={getLocalizedUrl(`/${breadcrumb}/`)}>{breadcrumb}</a>
+            <a href={getLocalizedUrl(`/${breadcrumb}/`)}>
+              {translateBreadcrumb(breadcrumb)}
+            </a>
             <span aria-hidden="true">&raquo;</span>
           </li>
         )
