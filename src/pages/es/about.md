@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/MDLayout.astro
-title: "About"
+title: "Sobre el Evento"
 ---
 
 ## El Rompehielos
@@ -14,8 +14,8 @@ title: "About"
 [Center for Urban Horticulture, Seattle, WA](https://www.google.com/maps/place/Center+for+Urban+Horticulture/@47.6575198,-122.2900401,754m/data=!3m2!1e3!4b1!4m6!3m5!1s0x5490149a62e1bc07:0x9567ff7fd758298a!8m2!3d47.6575198!4d-122.2900401!16s%2Fg%2F1tf35ng4?entry=tts&g_ep=EgoyMDI0MTIxMS4wIPu8ASoASAFQAw%3D%3D)
 
 ## El Hotel
-Silver Cloud Hotel - University District (15 min walk from venue)
+Silver Cloud Hotel - University District (15 minutos caminando desde el lugar)
 
 5036 25th Ave NE, Seattle, WA 98105
 
-Block with **10% discount** using this [discount link](https://university.silvercloud.com/irmng/#/search?g=AINARA&o=AINARA)
+Bloque con **10% de descuento** usando este [enlace de descuento](https://university.silvercloud.com/irmng/#/search?g=AINARA&o=AINARA)

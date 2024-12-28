@@ -6,162 +6,161 @@ import Layout from "@layouts/Layout.astro";
 import ActivitySelection from '@components/ActivitySelection.astro';
 
 const categoryInfo = {
-  '🥾': 'Hiking',
-  '👨‍👩‍👦': 'Good for Kids',
-  '🚍': 'No Car Required',
-  '🎨': 'Arts & Culture',
+  '🥾': 'Senderismo',
+  '👨‍👩‍👦': 'Bueno para Niños',
+  '🚍': 'No Requiere Auto',
 };
 
 const activities = [
   {
     title: "Seattle Center",
     categories: ['🎨', '👨‍👩‍👦', '🚍'],
-    duration: "1-4 hours",
-    description: "The Space Needle, Chihuly Garden of Glass, and the Museum of Pop Culture are all located at the Seattle Center. This is a great place to spend a day."
+    duration: "1-4 horas",
+    description: "El Space Needle, el Jardín de Cristal de Chihuly y el Museo de la Cultura Pop están ubicados en el Seattle Center. Este es un excelente lugar para pasar el día."
   },
   {
     title: "Discovery Park",
     categories: ['🌲', '🥾', '🦅', '🚍'],
-    duration: "1-4 hours",
-    description: "Discovery Park is the largest park in Seattle and offers a variety of hiking trails, beaches, and views of the Sound and surrounding mountains. The park is home to a variety of wildlife, including bald eagles, seals, and sea lions."
+    duration: "1-4 horas",
+    description: "Discovery Park es el parque más grande de Seattle y ofrece una variedad de senderos para caminar, playas y vistas del Sound y las montañas circundantes. El parque alberga una variedad de vida silvestre, incluyendo águilas calvas, focas y leones marinos."
   },
   {
     title: "Ballard Locks",
     categories: ['🦅', '👨‍👩‍👦', '🏊', '🚍'],
-    duration: "1 hour",
-    description: "The end of June should be a great time to visit the Ballard Locks and watch the salmon run. At the end of June, the Chinook (King) salmon should be running, and you can watch them jump the fish ladder."
+    duration: "1 hora",
+    description: "Finales de junio es un excelente momento para visitar las Esclusas de Ballard y observar la migración del salmón. A finales de junio, el salmón Chinook (Rey) debería estar migrando, y podrás verlos saltar por la escalera de peces."
   },
   {
     title: "Green Lake",
     categories: ['🥾', '👨‍👩‍👦', '🏊', '🚍'],
-    duration: "1-3 hours",
-    description: "Green Lake is a popular park located in the heart of Seattle. The park is a nice place to walk, picnic, and swim. It is also home to a variety of wildlife, including ducks, geese, and turtles."
+    duration: "1-3 horas",
+    description: "Green Lake es un popular parque ubicado en el corazón de Seattle. El parque es un lugar agradable para caminar, hacer picnic y nadar. También alberga una variedad de vida silvestre, incluyendo patos, gansos y tortugas."
   },
   {
     title: "Pike Place Market",
     categories: ['🍽️', '🚍'],
-    duration: "2-4 hours",
-    description: "Everybody has heard of the flying fish, but the market is also home to a variety of shops, restaurants, and street performers. Check it out!"
+    duration: "2-4 horas",
+    description: "Todos han oído hablar de los peces voladores, pero el mercado también alberga una variedad de tiendas, restaurantes y artistas callejeros. ¡Ven a visitarlo!"
   },
   {
     title: "Center for Urban Horticulture",
     categories: ['🌲', '🚍'],
-    duration: "1-2 hours",
-    description: "Our wedding venue is a great place to go for a walk through the wetlands. The UW campus is also right across the street, which is a pretty place to explore."
+    duration: "1-2 horas",
+    description: "Nuestro lugar de boda es un excelente lugar para dar un paseo por los humedales. El campus de la UW está justo al otro lado de la calle, que es un lugar bonito para explorar."
   },
   {
     title: "Seattle Zoo",
     categories: ['👨‍👩‍👦', '🦒', '🚍'],
-    duration: "3-5 hours",
-    description: "The Seattle Zoo is a great place to spend a day with the family. The zoo is home to a variety of animals, including elephants, tigers, and gorillas."
+    duration: "3-5 horas",
+    description: "El Zoológico de Seattle es un excelente lugar para pasar el día en familia. El zoológico alberga una variedad de animales, incluyendo elefantes, tigres y gorilas."
   },
   {
     title: "Hot Tub Boats",
     categories: ['🏊', '🚍'],
-    duration: "2 hours",
-    description: "This one is a bit trashy, but it is a lot of fun. You can rent a hot tub boat and cruise around Lake Union. This is a great rainy day activity."
+    duration: "2 horas",
+    description: "Este es un poco extravagante, pero es muy divertido. Puedes alquilar un bote con jacuzzi y navegar por el Lago Union. Esta es una excelente actividad para días lluviosos."
   },
   {
     title: "Washington Park Arboretum",
     categories: ['🌲', '🥾', '🚍'],
-    duration: "1-3 hours",
-    description: "The Washington Park Arboretum is a 230-acre park located on the shores of Lake Washington. Great place to go for a walk, run, or bike ride."
+    duration: "1-3 horas",
+    description: "El Arboreto del Parque Washington es un parque de 230 acres ubicado en las orillas del Lago Washington. Excelente lugar para caminar, correr o andar en bicicleta."
   },
   {
     title: "Ferry to Bainbridge Island",
     categories: ['⛴️', '👨‍👩‍👦', '🚍'],
-    duration: "2-8 hours",
-    description: "The ferry to Bainbridge Island is a great way to see the Sound and the city. The island is home to a variety of shops, restaurants, and parks all within walking distance of the ferry terminal."
+    duration: "2-8 horas",
+    description: "El ferry a la Isla Bainbridge es una excelente manera de ver el Sound y la ciudad. La isla alberga una variedad de tiendas, restaurantes y parques, todos a poca distancia a pie de la terminal del ferry."
   },
   {
     title: "Gold Bar Reptile Zoo",
     categories: ['👨‍👩‍👦', '🐍'],
-    duration: "2-4 hours",
-    description: "Great place to take kids. Located about 30 minutes north of Seattle in Monroe. Daily \"close encounters\" with various scheduled where children get to pet / hold very large snakes or lizards."
+    duration: "2-4 horas",
+    description: "Excelente lugar para llevar a los niños. Ubicado a unos 30 minutos al norte de Seattle en Monroe. Encuentros cercanos diarios programados donde los niños pueden acariciar/sostener serpientes o lagartos muy grandes."
   },
   {
     title: "Snoqualmie Falls",
     categories: ['🌲', '🚗', '👨‍👩‍👦'],
-    duration: "1-2 hours",
-    description: "Roadside waterfall located about 30 minutes east of Seattle on I-90."
+    duration: "1-2 horas",
+    description: "Cascada al lado de la carretera ubicada a unos 30 minutos al este de Seattle en la I-90."
   },
   {
     title: "Twin Falls",
     categories: ['🌲', '🥾', '🚗'],
-    duration: "2-4 hours",
-    description: "Easy 4 miles, flat hike located about 30 minutes east of Seattle on I-90."
+    duration: "2-4 horas",
+    description: "Caminata fácil de 4 millas, plana, ubicada a unos 30 minutos al este de Seattle en la I-90."
   },
   {
     title: "Little Si",
     categories: ['🌲', '🥾', '🚗'],
-    duration: "2-4 hours",
-    description: "Right off of I-90, Little Si is a short hike with a great view of the valley."
+    duration: "2-4 horas",
+    description: "Justo al lado de la I-90, Little Si es una caminata corta con una gran vista del valle."
   },
   {
     title: "Mt. Washington",
     categories: ['🌲', '🥾', '🚗', '💪'],
-    duration: "3-6 hours",
-    description: "8 miles, 3,000 ft elevation gain: Mt. Washington has nice views of the Sound and mountains. Located about 30 minutes east of Seattle on I-90."
+    duration: "3-6 horas",
+    description: "8 millas, 3,000 pies de elevación: Mt. Washington tiene hermosas vistas del Sound y las montañas. Ubicado a unos 30 minutos al este de Seattle en la I-90."
   },
   {
     title: "Snow Lake",
     categories: ['🌲', '🥾', '🚗', '❄️'],
-    duration: "4-8 hours",
-    description: "6 miles, 2,000 ft elevation gain: Snow Lake is a beautiful alpine lake located about an hour east of Seattle. The trail climbs out of Snoqualmie Pass into a beautiful alpine basin."
+    duration: "4-8 horas",
+    description: "6 millas, 2,000 pies de elevación: Snow Lake es un hermoso lago alpino ubicado a una hora al este de Seattle. El sendero asciende desde Snoqualmie Pass hasta una hermosa cuenca alpina."
   },
   {
     title: "Lake Serene",
     categories: ['🌲', '🥾', '🚗', '💪'],
-    duration: "4-8 hours",
-    description: "8 miles, 2,500 ft elevation gain: Lake Serene hikes to an alpine lake with a beautiful waterfall just below Mt. Index. Located about an hour east of Seattle along Highway 2."
+    duration: "4-8 horas",
+    description: "8 millas, 2,500 pies de elevación: Lake Serene sube hasta un lago alpino con una hermosa cascada justo debajo del Mt. Index. Ubicado a una hora al este de Seattle a lo largo de la Carretera 2."
   },
   {
     title: "Enchantments",
     categories: ['🌲', '🥾', '🚗', '💪', '❄️'],
-    duration: "8-16 hours",
-    description: "2.5 hours east of Seattle, the Enchantments are a series of alpine lakes and meadows located next to the Bavarian-themed town of Leavenworth. The 18-mile thru-hike is one of the most popular in the state, but there are also a number of shorter hikes. The hike to Colchuck Lake is recommended, and continuing up Aasgard Pass gives you a great view into the core Enchantments."
+    duration: "8-16 horas",
+    description: "A 2.5 horas al este de Seattle, los Enchantments son una serie de lagos alpinos y praderas ubicados junto al pueblo de estilo bávaro de Leavenworth. La caminata de 18 millas es una de las más populares del estado, pero también hay varias caminatas más cortas. Se recomienda la caminata hacia el Lago Colchuck, y continuar por el Paso Aasgard te da una excelente vista del núcleo de los Enchantments."
   },
   {
     title: "Mt. Rainier National Park",
     categories: ['🌲', '🥾', '🚗', '❄️'],
-    duration: "12-48 hours",
-    description: "If it is not cloudy, you can't miss it. Mt. Rainier is the tallest mountain in Washington and visible from almost anywhere. The park is only about 2.5 hours south of Seattle. You can make your day here as easy or hard as you want. Late June is still pretty snowy, so low elevation hikes in/near the park are the best bet if you want to keep your shoes dry."
+    duration: "12-48 horas",
+    description: "Si no está nublado, no puedes perdértelo. El Mt. Rainier es la montaña más alta de Washington y visible desde casi cualquier lugar. El parque está a solo 2.5 horas al sur de Seattle. Puedes hacer tu día aquí tan fácil o difícil como quieras. A finales de junio todavía hay bastante nieve, así que las caminatas de baja elevación en/cerca del parque son la mejor opción si quieres mantener tus zapatos secos."
   },
   {
     title: "Olympic National Park",
     categories: ['🌲', '🚗', '⛴️', '🥾'],
-    duration: "12-48 hours",
-    description: "Olympic National Park is located on the Olympic Peninsula, about 2 to 3 hours from Seattle. It feels closer since you spend the first hour riding a ferry and drinking coffee. The park has temperate rainforests with some of the highest densities of biomass in the world as well as rugged coastline strewn with old-growth driftwood."
+    duration: "12-48 horas",
+    description: "El Parque Nacional Olympic está ubicado en la Península Olímpica, a unas 2 a 3 horas de Seattle. Se siente más cerca ya que pasas la primera hora viajando en ferry y tomando café. El parque tiene bosques templados lluviosos con algunas de las densidades más altas de biomasa en el mundo, así como una costa accidentada llena de madera flotante antigua."
   },
   {
     title: "North Cascades National Park",
     categories: ['🌲', '🥾', '🚗', '🏊', '❄️'],
-    duration: "12-48 hours",
-    description: "The North Cascades are located about 3 hours north of Seattle. The park is home to some of the most rugged and remote terrain in the lower 48. It also offers casual swimming in teal blue glacial lakes."
+    duration: "12-48 horas",
+    description: "Las North Cascades están ubicadas a unas 3 horas al norte de Seattle. El parque alberga algunos de los terrenos más accidentados y remotos en los 48 estados inferiores. También ofrece natación casual en lagos glaciales de color azul turquesa."
   },
   {
     title: "San Juan Islands",
     categories: ['🌲', '⛴️', '🦅', '👨‍👩‍👦', '🚍'],
-    duration: "1-2 days",
-    description: "The San Juan Islands are a short ferry ride from Seattle and offer kayaking, whale watching, and hiking. The islands are also home to a number of charming towns and villages, with various restaurants and shops."
+    duration: "1-2 días",
+    description: "Las Islas San Juan están a un corto viaje en ferry desde Seattle y ofrecen kayak, avistamiento de ballenas y caminatas. Las islas también albergan varios pueblos y aldeas encantadores, con diversos restaurantes y tiendas."
   },
   {
     title: "Vancouver Island / Tofino",
     categories: ['🌲', '⛴️', '🚍'],
-    duration: "1-4 days",
-    description: "Vancouver Island is a 4-hour ferry ride (or short seaplane ride) from Seattle. Victoria is a pretty city, or you can continue driving north to Tofino and the Sunshine Coast."
+    duration: "1-4 días",
+    description: "La Isla de Vancouver está a 4 horas en ferry (o un corto viaje en hidroavión) desde Seattle. Victoria es una ciudad bonita, o puedes continuar conduciendo hacia el norte hasta Tofino y la Costa del Sol."
   },
   {
     title: "Squamish",
-    categories: ['🌲', '🚗', '🥾',],
-    duration: "1-4 days",
-    description: "Just north of Vancouver, Squamish sits on the northern tip of the Howe Sound. The town is a popular destination for mountain bikers, climbers, and hikers."
+    categories: ['🌲', '🚗', '🥾'],
+    duration: "1-4 días",
+    description: "Justo al norte de Vancouver, Squamish se encuentra en la punta norte del Howe Sound. La ciudad es un destino popular para ciclistas de montaña, escaladores y excursionistas."
   },
   {
     title: "Juneau, Alaska",
     categories: ['🌲', '🥾', '✈️', '🦅', '❄️'],
-    duration: "2-4 days",
-    description: "Alaska's capital city is a short 2-hour flight from Seattle. Juneau is home to the Mendenhall Glacier. Whale watching, brown bear viewing, hiking, and helicopter tours are all popular here."
+    duration: "2-4 días",
+    description: "La capital de Alaska está a un corto vuelo de 2 horas desde Seattle. Juneau es el hogar del Glaciar Mendenhall. El avistamiento de ballenas, observación de osos pardos, caminatas y tours en helicóptero son populares aquí."
   }
 ];
 ---

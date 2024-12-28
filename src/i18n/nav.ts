@@ -8,6 +8,6 @@ export const nav = {
   es: {
     home: "Inicio",
     activities: "Actividades",
-    about: "Sobre Nosotros"
+    about: "Sobre el Evento"
   }
 } as const;
