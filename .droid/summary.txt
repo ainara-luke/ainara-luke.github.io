@@ -1,0 +1,64 @@
+# Project Summary: Wedding Website (Astro-based)
+
+## Core Purpose
+A bilingual (English/Spanish) wedding website for Luke and Ainara's wedding, scheduled for June 27th, 2025 in Seattle, WA. Built on the AstroPaper theme but customized for wedding functionality.
+
+## Technical Stack
+- Framework: Astro v4.16
+- UI: React + TailwindCSS
+- Language: TypeScript
+- Search: FuseJS
+- Deployment: Configured for Cloudflare Pages
+
+## Key Components & Architecture
+
+### Core Features
+- Password Protection (password: "CountryMice")
+- RSVP System with unique invite hashes
+- Activity Selection
+- Bilingual Support (es/ directory)
+- Countdown Timer
+- Dynamic OG Image Generation
+
+### Directory Structure
+```
+src/
+├── pages/              # Core routes (index, rsvp, activities)
+├── components/         # UI components (Header, Footer, ActivityCard, etc.)
+├── layouts/           # Page layouts
+├── i18n/              # Internationalization
+└── config.ts          # Site configuration
+
+wedding-config.yaml    # Guest list and invite management
+```
+
+### Notable Files
+- `src/config.ts`: Core site configuration
+- `wedding-config.yaml`: Manages invites and guest list
+- `src/pages/rsvp.astro`: RSVP functionality
+- `src/pages/activities.astro`: Wedding activities
+
+### Key Functionalities
+1. Guest Management:
+   - Unique invite hashes
+   - Email-based guest tracking
+   - RSVP system
+
+2. Content Features:
+   - Bilingual content delivery
+   - Activity selection/management
+   - Countdown to wedding date
+
+3. Technical Features:
+   - Responsive design
+   - SEO optimization
+   - Light/dark mode support
+
+## Development Workflow
+- Uses conventional commits
+- Includes Docker configuration
+- Comprehensive TypeScript type checking
+- Automated deployment pipeline
+
+## Project State
+Active development, with core wedding functionality built on top of the AstroPaper blog theme base. Emphasizes accessibility, performance, and bilingual support.
