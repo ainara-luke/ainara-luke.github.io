@@ -9,6 +9,10 @@ export interface Props {
 
 const { noMarginTop = false } = Astro.props;
 const currentLocale = Astro.currentLocale || 'en';
+const currentPath = Astro.url.pathname;
+const otherLocale = currentLocale === 'en' ? 'es' : 'en';
+const otherLocalePath = currentLocale === 'en' ? '/es' + currentPath : currentPath.replace('/es', '') || '/';
+const switchLanguageText = currentLocale === 'en' ? '🇲🇽 Español 🇲🇽' : '🇺🇸 English 🇺🇸';
 const t = footer[currentLocale as keyof typeof footer];
 ---
 
@@ -22,6 +26,8 @@ const t = footer[currentLocale as keyof typeof footer];
       <span>{t.location}</span>
       <span class="separator">&nbsp;|&nbsp;</span>
       <span>{t.note}</span>
+      <span class="separator">&nbsp;|&nbsp;</span>
+      <a href={otherLocalePath} class="language-switch hover:text-accent">{switchLanguageText}</a>
     </div>
   </div>
 </footer>
