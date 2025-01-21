@@ -20,9 +20,9 @@ const { invite_key, guests } = Astro.props;
   <Header />
   <main id="main-content">
     <section id="rsvp">
-      <h1>RSVP</h1>
+      <h1 class="text-2xl font-bold mb-4 text-skin-base">RSVP</h1>
       <div id="rsvpContainer">
-        <p class="mb-4">Please confirm your attendance:</p>
+        <p class="mb-4 text-skin-base">Please confirm your attendance:</p>
         <form id="rsvpForm" class="space-y-4">
           <!-- Hidden field for invite key -->
           <input type="hidden" name="invite_key" value={invite_key} />
@@ -39,7 +39,7 @@ const { invite_key, guests } = Astro.props;
                   class="mr-2"
                   style="cursor: pointer"
                 />
-                <label for={guest.name} style="cursor: pointer">{guest.name}</label>
+                <label for={guest.name} class="text-skin-base cursor-pointer">{guest.name}</label>
               </div>
             ))}
             <!-- Decline Option -->
@@ -51,25 +51,25 @@ const { invite_key, guests } = Astro.props;
                 class="mr-2"
                 style="cursor: pointer"
               />
-              <label for="decline" class="opacity-70" style="cursor: pointer">Regretfully cannot attend</label>
+              <label for="decline" class="text-skin-base opacity-70 cursor-pointer">Regretfully cannot attend</label>
             </div>
           </div>
 
           <!-- Notes field -->
           <div>
-            <label for="notes" class="block mb-2">Additional Notes:</label>
+            <label for="notes" class="block mb-2 text-skin-base">Additional Notes:</label>
             <textarea
               id="notes"
               name="notes"
               rows="3"
-              class="w-full p-2 border rounded"
+              class="w-full p-2 border rounded bg-skin-fill text-skin-base border-skin-line focus:outline-none focus:ring-2 focus:ring-skin-accent"
             ></textarea>
           </div>
 
           <!-- Submit button -->
           <button
             type="submit"
-            class="bg-skin-accent text-skin-inverted px-4 py-2 rounded"
+            class="bg-skin-accent text-white dark:text-white px-4 py-2 rounded"
           >
             Submit RSVP
           </button>
@@ -149,11 +149,11 @@ const { invite_key, guests } = Astro.props;
 
       // Replace the entire container instead of just the form
       document.getElementById('rsvpContainer').innerHTML =
-        '<div class="text-green-600">Thank you for your RSVP!</div>';
+        '<div class="text-green-600 dark:text-green-400">Thank you for your RSVP!</div>';
     } catch (error) {
       console.error('Error:', error);
       document.getElementById('rsvpContainer').innerHTML +=
-        '<div class="text-red-600">There was an error submitting your RSVP. Please try again later.</div>';
+        '<div class="text-red-600 dark:text-red-400">There was an error submitting your RSVP. Please try again later.</div>';
     }
   });
 </script>

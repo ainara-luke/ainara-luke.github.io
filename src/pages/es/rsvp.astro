@@ -9,23 +9,21 @@ const validHashes = WEDDINGCONFIG.invites.map(invite => invite.hash);
 <Layout title="Confirmación">
   <Header />
   <main class="flex items-start justify-center pt-24">
-    <form action="" method="GET" class="w-full max-w-md space-y-4 p-8">
-      <h1 class="text-2xl font-bold text-center">Ingresa tu código de confirmación</h1>
+    <form class="w-full max-w-md space-y-4 p-8">
+      <h1 class="text-2xl font-bold text-center text-skin-base">Ingresa tu código de confirmación</h1>
       <div class="space-y-2">
-        <label>
-          <input
-            type="text"
-            name="code"
-            required
-            class="w-full p-2 border rounded"
-            placeholder="Ingresa tu código"
-          />
-        </label>
+        <input
+          type="text"
+          name="code"
+          required
+          class="w-full p-2 border rounded bg-skin-fill text-skin-base border-skin-line focus:outline-none focus:ring-2 focus:ring-skin-accent"
+          placeholder="Ingresa tu código"
+        />
         <p id="error-message" class="text-red-500 hidden">Código de confirmación inválido. Por favor, verifica e intenta de nuevo.</p>
       </div>
       <button
         type="submit"
-        class="w-full p-2 bg-skin-accent text-white rounded hover:opacity-90"
+        class="w-full p-2 bg-skin-accent text-white dark:text-white rounded hover:opacity-90"
       >
         Enviar
       </button>
@@ -34,17 +32,20 @@ const validHashes = WEDDINGCONFIG.invites.map(invite => invite.hash);
 </Layout>
 
 <script define:vars={{ validHashes }}>
-  const form = document.querySelector("form");
-  const errorMessage = document.querySelector("#error-message");
+document.querySelector('form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const code = e.target.code.value.trim();
 
-  form?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const code = new FormData(e.target).get("code");
-
-    if (validHashes.includes(code)) {
-      window.location.href = `/rsvp/${code}`;
-    } else {
-      errorMessage?.classList.remove("hidden");
-    }
-  });
+  if (validHashes.includes(code)) {
+    // Create and click a temporary link to use Astro's client-side navigation
+    const tempLink = document.createElement('a');
+    tempLink.href = `/es/rsvp/${code}`;
+    tempLink.style.display = 'none';
+    document.body.appendChild(tempLink);
+    tempLink.click();
+    document.body.removeChild(tempLink);
+  } else {
+    document.querySelector('#error-message').classList.remove('hidden');
+  }
+});
 </script>
