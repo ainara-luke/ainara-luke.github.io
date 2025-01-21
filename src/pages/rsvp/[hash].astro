@@ -22,8 +22,7 @@ const { invite_key, guests } = Astro.props;
     <section id="rsvp">
       <h1>RSVP</h1>
       <div id="rsvpContainer">
-        <p class="mb-4">Please confirm your attendance below:</p>
-
+        <p class="mb-4">Please confirm your attendance:</p>
         <form id="rsvpForm" class="space-y-4">
           <!-- Hidden field for invite key -->
           <input type="hidden" name="invite_key" value={invite_key} />
@@ -43,6 +42,17 @@ const { invite_key, guests } = Astro.props;
                 <label for={guest.name} style="cursor: pointer">{guest.name}</label>
               </div>
             ))}
+            <!-- Decline Option -->
+            <div class="flex items-center">
+              <input
+                type="checkbox"
+                id="decline"
+                name="decline"
+                class="mr-2"
+                style="cursor: pointer"
+              />
+              <label for="decline" class="opacity-70" style="cursor: pointer">Regretfully cannot attend</label>
+            </div>
           </div>
 
           <!-- Notes field -->
@@ -68,6 +78,28 @@ const { invite_key, guests } = Astro.props;
     </section>
   </main>
 </Layout>
+<script>
+  // Handle decline checkbox interaction
+  const declineCheckbox = document.getElementById('decline');
+  const guestCheckboxes = document.querySelectorAll('input[name="guest_names"]');
+  const guestSection = document.querySelector('.space-y-2');
+
+  declineCheckbox?.addEventListener('change', (e) => {
+    const isDeclined = e.target.checked;
+    const declineLabel = document.querySelector('label[for="decline"]');
+    
+    // Update guest checkboxes and section opacity
+    guestCheckboxes.forEach(checkbox => {
+      checkbox.disabled = isDeclined;
+      checkbox.checked = false;
+    });
+    guestSection.style.opacity = isDeclined ? '0.5' : '1';
+
+    // Update decline label opacity
+    declineLabel.classList.toggle('opacity-70', !isDeclined);
+  });
+</script>
+
 
 <style>
     #rsvp {
@@ -88,15 +120,22 @@ const { invite_key, guests } = Astro.props;
     e.preventDefault();
     const formData = new FormData();
 
-    // Get checked guests
-    const checkedBoxes = form.querySelectorAll('input[name="guest_names"]:checked');
-    const guestNames = Array.from(checkedBoxes).map(box => box.value);
+    const declineStatus = document.getElementById('decline').checked;
+
+    // Get checked guests (only if not declined)
+    const guestNames = declineStatus
+      ? []
+      : Array.from(form.querySelectorAll('input[name="guest_names"]:checked')).map(box => box.value);
 
     // Gather form data
     formData.append('entry.1910503431', form.querySelector('input[name="invite_key"]').value);
-    formData.append('entry.1715372634', guestNames.length.toString());
+    formData.append('entry.1715372634', declineStatus ? '0' : guestNames.length.toString());
     formData.append('entry.1831974976', JSON.stringify(guestNames));
-    formData.append('entry.391972157', form.querySelector('#notes').value);
+    formData.append('entry.391972157', 
+      declineStatus 
+        ? 'Declined: ' + form.querySelector('#notes').value
+        : form.querySelector('#notes').value
+    );
 
     try {
       const response = await fetch(
