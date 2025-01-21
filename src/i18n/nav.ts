@@ -3,11 +3,11 @@ export const nav = {
   en: {
     home: "Home",
     activities: "Activities",
-    about: "About"
+    about: "Schedule"
   },
   es: {
     home: "Inicio",
     activities: "Actividades",
-    about: "Sobre el Evento"
+    about: "Horario"
   }
 } as const;
