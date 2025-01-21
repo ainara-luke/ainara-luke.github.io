@@ -1,7 +1,10 @@
 ---
 layout: ../../layouts/MDLayout.astro
-title: "Sobre el Evento"
+title: "Horario"
 ---
+Esta página incluye todos los detalles del evento y una lista de actividades en grupos pequeños (próximamente) para que la gente se pueda inscribir. Si tienes alguna pregunta específica, envíanos un mensaje de texto y la agregaremos a esta página - ¡es probable que alguien más tenga la misma duda!
+
+
 
 ## El Rompehielos
 5PM el 26 de junio, 2025

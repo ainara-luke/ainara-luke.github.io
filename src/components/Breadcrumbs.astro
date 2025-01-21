@@ -23,7 +23,8 @@ const breadcrumbList = currentUrlPath.split("/").filter(Boolean);
 const translateBreadcrumb = (breadcrumb: string) => {
   const translations: Record<string, string> = {
     "activities": t.activities,
-    "about": t.about
+    "schedule": t.about,
+    "about": t.about  // Keep this for backward compatibility
   };
   return translations[breadcrumb] || decodeURIComponent(breadcrumb);
 };

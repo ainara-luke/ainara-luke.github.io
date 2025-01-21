@@ -1,7 +1,10 @@
 ---
 layout: ../layouts/MDLayout.astro
-title: "About"
+title: "Schedule"
 ---
+This page includes all event details and a list of small group activities (coming soon) for people to sign up for. If you have any specific questions, please text us and we'll add them to this page - chances are somebody else has the same question!
+
+
 
 ## Ice Breaker
 5PM on June 26th, 2025
