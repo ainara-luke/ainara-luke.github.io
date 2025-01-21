@@ -2,7 +2,7 @@
 layout: ../layouts/MDLayout.astro
 title: "Schedule"
 ---
-This page includes all event details and a list of small group activities (coming soon) for people to sign up for. If you have any specific questions, please text us and we'll add them to this page - chances are somebody else has the same question!
+This page includes all event details. If you have any specific questions, please text us and we'll add them to this page - chances are somebody else has the same question!
 
 
 
