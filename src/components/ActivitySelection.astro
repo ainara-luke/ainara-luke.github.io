@@ -11,6 +11,7 @@ interface Activity {
 interface Props {
   activities: Activity[];
   categoryInfo: Record<string, string>;
+  description?: string;
 }
 
 import { nav } from '../i18n/nav';
@@ -19,12 +20,16 @@ import { nav } from '../i18n/nav';
 const currentLocale = Astro.currentLocale || 'en';
 const t = nav[currentLocale as keyof typeof nav];
 
-const { activities, categoryInfo } = Astro.props;
+const { activities, categoryInfo, description } = Astro.props;
 const uniqueCategories = Object.keys(categoryInfo);
 ---
 
 <section class="prose mb-28 max-w-3xl prose-img:border-0 dark:prose-invert">
+
   <h1 class="text-2xl tracking-wider sm:text-3xl">{t.activities}</h1>
+  {description && 
+    <p class="text-lg mb-6">{description}</p>
+  }
 
   <div class="mb-8 flex flex-wrap gap-4">
     {uniqueCategories.map(category => (
