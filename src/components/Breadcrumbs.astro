@@ -23,8 +23,9 @@ const breadcrumbList = currentUrlPath.split("/").filter(Boolean);
 const translateBreadcrumb = (breadcrumb: string) => {
   const translations: Record<string, string> = {
     "activities": t.activities,
-    "schedule": t.about,
-    "about": t.about  // Keep this for backward compatibility
+    "information": t.about,
+    "schedule": t.about,     // Keep for backward compatibility
+    "about": t.about       // Keep for backward compatibility
   };
   return translations[breadcrumb] || decodeURIComponent(breadcrumb);
 };
@@ -72,9 +73,7 @@ const getLocalizedUrl = (path: string) => {
           </li>
         ) : (
           <li>
-            <a href={getLocalizedUrl(`/${breadcrumb}/`)}>
-              {translateBreadcrumb(breadcrumb)}
-            </a>
+            <a href={getLocalizedUrl(`/${breadcrumb}/`)}>{translateBreadcrumb(breadcrumb)}</a>
             <span aria-hidden="true">&raquo;</span>
           </li>
         )
