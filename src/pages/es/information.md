@@ -28,8 +28,7 @@ Silver Cloud Hotel - University District (15 minutos caminando desde el lugar)
 
 5036 25th Ave NE, Seattle, WA 98105
 
-Bloque con **10% de descuento** usando este [enlace de descuento](https://university.silvercloud.com/irmng/#/search?g=AINARA&o=AINARA)
-
+>  Tenemos un bloque en el hotel que podran usar para reservar con un descuento del 10%, pero la pagina del hotel esta corrigiendo algo. Gracias por su paciencia. 🙏
 ### Vestimenta para el Jardín
 Nos casaremos al aire libre, y parte de nuestro lugar (incluyendo la ceremonia) está sobre tierra/pasto. Para hombres esto sería camisa con cuello y pantalones (no shorts o zapatos abiertos; guayaberas sí.)
 
