@@ -26,3 +26,6 @@ Hot tub boating, roller skate disco, hiking, etc. More details on this coming la
 
 ### Garden Attire
 We are getting married outdoors, and part of our venue (including the ceremony) is on dirt/grass. For men this will look like a collared shirt and pants (no shorts or open-toed shoes; yes to guayaberas.)
+
+### Gifts and Registry ☠️
+Many of you are flying across oceans and continents to celebrate with us - your presence is truly the greatest present we could ask for.
