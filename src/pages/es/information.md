@@ -27,5 +27,5 @@ Paseos en bote con jacuzzi, discoteca sobre patines, senderismo, etc. Más detal
 ### Vestimenta para el Jardín
 Nos casaremos al aire libre, y parte de nuestro lugar (incluyendo la ceremonia) está sobre tierra/pasto. Para hombres esto sería camisa con cuello y pantalones (no shorts o zapatos abiertos; guayaberas sí.)
 
-### Regalos y Lista de Bodas ☠️
+### Regalos ☠️
 Muchos de ustedes están volando a través de océanos y continentes para celebrar con nosotros - su presencia es verdaderamente el mejor regalo que podríamos pedir.
