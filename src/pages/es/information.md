@@ -23,6 +23,12 @@ Paseos en bote con jacuzzi, discoteca sobre patines, senderismo, etc. Más detal
 
 ## Preguntas Frecuentes
 
+### Hotel
+Silver Cloud Hotel - University District (15 minutos caminando desde el lugar)
+
+5036 25th Ave NE, Seattle, WA 98105
+
+Bloque con **10% de descuento** usando este [enlace de descuento](https://university.silvercloud.com/irmng/#/search?g=AINARA&o=AINARA)
 
 ### Vestimenta para el Jardín
 Nos casaremos al aire libre, y parte de nuestro lugar (incluyendo la ceremonia) está sobre tierra/pasto. Para hombres esto sería camisa con cuello y pantalones (no shorts o zapatos abiertos; guayaberas sí.)
