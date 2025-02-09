@@ -25,5 +25,4 @@ Hot tub boating, roller skate disco, hiking, etc. More details on this coming la
 
 
 ### Garden Attire
-We are getting married outdoors, and part of our venue (including the ceremony) is on dirt/grass. This is probably not 
-the venue for stilettos, so wear whatever makes you feel comfortable!
+We are getting married outdoors, and part of our venue (including the ceremony) is on dirt/grass. For men this will look like a collared shirt and pants (no shorts or open-toed shoes; yes to guayaberas.)
