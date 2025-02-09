@@ -25,5 +25,4 @@ Paseos en bote con jacuzzi, discoteca sobre patines, senderismo, etc. Más detal
 
 
 ### Vestimenta para el Jardín
-Nos casaremos al aire libre, y parte de nuestro lugar (incluida la ceremonia) está sobre tierra/césped. Probablemente no
-es el lugar ideal para tacones de aguja, así que usa lo que te haga sentir cómodo/a.
+Nos casaremos al aire libre, y parte de nuestro lugar (incluyendo la ceremonia) está sobre tierra/pasto. Para hombres esto sería camisa con cuello y pantalones (no shorts o zapatos abiertos; guayaberas sí.)
