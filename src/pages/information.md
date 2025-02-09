@@ -23,12 +23,6 @@ Hot tub boating, roller skate disco, hiking, etc. More details on this coming la
 
 ## FAQ
 
-### Hotel
-Silver Cloud Hotel - University District (15 min walk from venue)
-
-5036 25th Ave NE, Seattle, WA 98105
-
-Block with **10% discount** using this [discount link](https://university.silvercloud.com/irmng/#/search?g=AINARA&o=AINARA)
 
 ### Garden Attire
 We are getting married outdoors, and part of our venue (including the ceremony) is on dirt/grass. This is probably not 
