@@ -32,3 +32,5 @@ pnpm-debug.log*
 .pnp.*
 
 wedding-config.yaml
+
+*.tmp
