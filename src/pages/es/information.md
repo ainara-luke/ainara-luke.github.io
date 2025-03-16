@@ -17,9 +17,13 @@ Esta página incluye todos los detalles del evento. Si tienes alguna pregunta es
 
 [Center for Urban Horticulture, Seattle, WA](https://www.google.com/maps/place/Center+for+Urban+Horticulture/@47.6575198,-122.2900401,754m/data=!3m2!1e3!4b1!4m6!3m5!1s0x5490149a62e1bc07:0x9567ff7fd758298a!8m2!3d47.6575198!4d-122.2900401!16s%2Fg%2F1tf35ng4?entry=tts&g_ep=EgoyMDI0MTIxMS4wIPu8ASoASAFQAw%3D%3D)
 
-## Sábado/Domingo: Actividades en grupos pequeños
+## Sábado: Actividades en grupos pequeños y Cena
 Durante el fin de semana organizaremos varias actividades pequeñas para que la gente participe si les interesa.
 Paseos en bote con jacuzzi, discoteca sobre patines, senderismo, etc. Más detalles sobre esto próximamente
+
+6PM el 28 de junio June 28th, 2025
+
+[Rhein Haus, Seattle, WA](https://maps.app.goo.gl/rJJ7oppDr3LAYkrT8)
 
 ## Preguntas Frecuentes
 
