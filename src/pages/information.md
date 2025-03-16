@@ -33,5 +33,5 @@ Block with **10% discount** using this [discount link](https://university.silver
 ### Garden Attire
 We are getting married outdoors, and part of our venue (including the ceremony) is on dirt/grass. For men this will look like a collared shirt and pants (no shorts or open-toed shoes; yes to guayaberas.)
 
-### Gifts and Registry ☠️
+### ☠️☠️ Gifts and Registry ☠️☠️
 Many of you are flying across oceans and continents to celebrate with us - your presence is truly the greatest present we could ask for.
