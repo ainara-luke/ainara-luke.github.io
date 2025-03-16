@@ -17,9 +17,13 @@ This page includes all event details. If you have any specific questions, please
 
 [Center for Urban Horticulture, Seattle, WA](https://www.google.com/maps/place/Center+for+Urban+Horticulture/@47.6575198,-122.2900401,754m/data=!3m2!1e3!4b1!4m6!3m5!1s0x5490149a62e1bc07:0x9567ff7fd758298a!8m2!3d47.6575198!4d-122.2900401!16s%2Fg%2F1tf35ng4?entry=tts&g_ep=EgoyMDI0MTIxMS4wIPu8ASoASAFQAw%3D%3D)
 
-## Saturday/Sunday: Small group activities
+## Saturday: Small group activities and Dinner
 Over the weekend we will organize a handful of small activities for people to join if it strikes their fancy. 
-Hot tub boating, roller skate disco, hiking, etc. More details on this coming later 
+Hot tub boating, roller skate disco, hiking, etc. More details on this coming later
+
+6PM on June 28th, 2025
+[Rhein Haus]
+(https://maps.app.goo.gl/rJJ7oppDr3LAYkrT8)
 
 ## FAQ
 
