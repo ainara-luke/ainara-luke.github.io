@@ -22,8 +22,9 @@ Over the weekend we will organize a handful of small activities for people to jo
 Hot tub boating, roller skate disco, hiking, etc. More details on this coming later
 
 6PM on June 28th, 2025
-[Rhein Haus]
+[Rhein Haus, Seattle, WA]
 (https://maps.app.goo.gl/rJJ7oppDr3LAYkrT8)
+
 
 ## FAQ
 
