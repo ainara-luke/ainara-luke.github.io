@@ -26,6 +26,18 @@ import CountdownTimer from "@components/CountdownTimer.astro";
         si tienen dudas. ¡Estamos muy contentos de verlos!
       </p>
 
+      <div class="photos-container">
+        <div class="photo-wrapper">
+          <img src="/ainara_etc.jpg" alt="Ainara de bebe" class="childhood-photo" />
+          <span class="photo-caption">Ainara</span>
+        </div>
+        ❤️
+        <div class="photo-wrapper">
+          <img src="/luke_and_mary.jpg" alt="Luke de bebe" class="childhood-photo" />
+          <span class="photo-caption">Luke</span>
+        </div>
+      </div>
+
       <CountdownTimer />
     </section>
   </main>
@@ -61,5 +73,19 @@ import CountdownTimer from "@components/CountdownTimer.astro";
     }
     #updates h2 {
         @apply text-2xl font-semibold tracking-wide text-center mb-8;
+    }
+
+    /* ===== Photos Section ===== */
+    .photos-container {
+        @apply flex flex-col sm:flex-row justify-center items-center gap-8 my-12;
+    }
+    .photo-wrapper {
+        @apply flex flex-col items-center gap-2;
+    }
+    .childhood-photo {
+        @apply w-64 h-auto object-contain rounded-lg shadow-lg transition-transform duration-300 hover:scale-105;
+    }
+    .photo-caption {
+        @apply text-lg font-medium opacity-90;
     }
 </style>
