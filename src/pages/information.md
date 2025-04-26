@@ -17,7 +17,7 @@ This page includes all event details. If you have any specific questions, please
 
 [Center for Urban Horticulture, Seattle, WA](https://www.google.com/maps/place/Center+for+Urban+Horticulture/@47.6575198,-122.2900401,754m/data=!3m2!1e3!4b1!4m6!3m5!1s0x5490149a62e1bc07:0x9567ff7fd758298a!8m2!3d47.6575198!4d-122.2900401!16s%2Fg%2F1tf35ng4?entry=tts&g_ep=EgoyMDI0MTIxMS4wIPu8ASoASAFQAw%3D%3D)
 
-_UNPLUGGED CEREMONY_. Please put away your phones unless you are a doctor delivering a baby. Let us know in advance if you have specific photo needs. Many guests are off the internet and social media for _security reasons_. Do not share photos of other attendees (bride included).
+_UNPLUGGED CEREMONY IN SUN ON GRASS_. Please put away your phones unless you are a doctor delivering a baby. Let us know in advance if you have specific photo needs. Many guests are off the internet and social media for _security reasons_. Do not share photos of other attendees (bride included).
 
 ## Saturday: Small group activities and Dinner
 Over the weekend we will organize a handful of small activities for people to join if it strikes their fancy. 
