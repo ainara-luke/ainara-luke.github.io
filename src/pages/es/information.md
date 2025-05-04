@@ -17,7 +17,7 @@ Esta página incluye todos los detalles del evento. Si tienes alguna pregunta es
 
 [Center for Urban Horticulture, Seattle, WA](https://www.google.com/maps/place/Center+for+Urban+Horticulture/@47.6575198,-122.2900401,754m/data=!3m2!1e3!4b1!4m6!3m5!1s0x5490149a62e1bc07:0x9567ff7fd758298a!8m2!3d47.6575198!4d-122.2900401!16s%2Fg%2F1tf35ng4?entry=tts&g_ep=EgoyMDI0MTIxMS4wIPu8ASoASAFQAw%3D%3D)
 
-_UNPLUGGED CEREMONY EN EL SOL Y PASTO_. Hemos contratado a un fotógrafo para que puedas estar completamente presente durante nuestra boda. Por favor, abstente de tomar fotos.
+_UNPLUGGED CEREMONY EN EL SOL Y PASTO_. Hemos contratado a una fotógrafa para que puedas estar completamente presente durante nuestra boda. Por favor, abstente de tomar fotos.
 
 ## Sábado: Actividades en grupos pequeños y Cena
 Durante el fin de semana organizaremos varias actividades pequeñas para que la gente participe si les interesa.
