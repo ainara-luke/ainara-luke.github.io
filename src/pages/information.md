@@ -9,7 +9,9 @@ This page includes all event details. If you have any specific questions, please
 
 ## Thursday: Ice Breaker
 5PM on June 26th, 2025
+
 There will be food.
+
 [Ravenna Brewing Co, Seattle, WA](https://www.google.com/maps/place/Ravenna+Brewing+Co/@47.66835,-122.3018081,754m/data=!3m2!1e3!4b1!4m6!3m5!1s0x5490147d89cbde09:0xb05b7c95104313ec!8m2!3d47.66835!4d-122.2992332!16s%2Fg%2F11c3w5vjj0?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D)
 
 ## Friday: Wedding
@@ -24,6 +26,7 @@ Over the weekend we will organize a handful of small activities for people to jo
 Hot tub boating, roller skate disco, hiking, etc. More details on this coming later
 
 6PM on June 28th, 2025
+
 There will be food.
 
 [Rhein Haus, Seattle, WA](https://maps.app.goo.gl/rJJ7oppDr3LAYkrT8)
