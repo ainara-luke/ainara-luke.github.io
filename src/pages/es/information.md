@@ -10,6 +10,8 @@ Esta página incluye todos los detalles del evento. Si tienes alguna pregunta es
 ## Jueves: El Rompehielos
 5PM el 26 de junio, 2025
 
+Habrá comida.
+
 [Ravenna Brewing Co, Seattle, WA](https://www.google.com/maps/place/Ravenna+Brewing+Co/@47.66835,-122.3018081,754m/data=!3m2!1e3!4b1!4m6!3m5!1s0x5490147d89cbde09:0xb05b7c95104313ec!8m2!3d47.66835!4d-122.2992332!16s%2Fg%2F11c3w5vjj0?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D)
 
 ## Viernes: La Boda
@@ -24,6 +26,8 @@ Durante el fin de semana organizaremos varias actividades pequeñas para que la 
 Paseos en bote con jacuzzi, discoteca sobre patines, senderismo, etc. Más detalles sobre esto próximamente
 
 6PM el 28 de junio June 28th, 2025
+
+Habrá comida.
 
 [Rhein Haus, Seattle, WA](https://maps.app.goo.gl/rJJ7oppDr3LAYkrT8)
 
